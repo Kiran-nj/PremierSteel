@@ -1,11 +1,14 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+// tailwind.config.js
+module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        'text-black': '2px 2px 4px rgba(0, 0, 0, 0.8)',
+      }
+    },
   },
   plugins: [],
-}
+};
