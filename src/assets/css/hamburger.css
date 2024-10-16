@@ -1,0 +1,49 @@
+/* Reset Style */
+button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  
+  /* Hamburger Menu Icon */
+  .menu__icon {
+    width: 28px;
+    height: 28px;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .menu__icon span {
+    width: 100%;
+    height: 0.125rem;
+    border-radius: 0.125rem;
+    background-color: white;
+    box-shadow: 0 .5px 2px 0 hsla(0, 0%, 0%, .2);
+    transition: transform .4s, background-color .4s, width .4s, opacity .4s;
+  }
+  
+  .menu__icon span:nth-child(2) {
+    width: 60%;
+  }
+  
+  .menu__icon.active span:nth-child(1) {
+    background-color: white;
+    transform: translateY(7.5px) rotate(-45deg);
+  }
+  
+  .menu__icon.active span:nth-child(2) {
+    width: 0;
+    opacity: 0;
+  }
+  
+  .menu__icon.active span:nth-child(3) {
+    background-color: white;
+    transform: translateY(-7.5px) rotate(45deg);
+  }
+  
