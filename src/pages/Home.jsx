@@ -1,10 +1,11 @@
 import React from 'react'
+import SteelProductsShowcase from '../components/Products'
 
 function Home() {
   return (
-    <div className='bg-red-400 h-96'>
-        Home
-    </div>
+    <>
+    <SteelProductsShowcase />
+    </>
   )
 }
 
