@@ -2,17 +2,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { NavLink } from 'react-router-dom';
 import companyLogo from '../assets/images/company_logo.jpg'; // Update the path to your image
-// import { capitalizeWord } from '../utils/helperFunctions';
 import '../assets/css/hamburger.css'
 
 const moreList = [
     { name: 'Home', path: '/' },
-    { name: 'Collections', path: '/vehicles' },
-    // { name: 'Showroom', path: '/showroom' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Sellcar', path: '/sellcar' },
-    { name: 'Insurance', path: '/insurance' },
-    { name: 'Emi-Calculator', path: '/emi-calculator' },
+    { name: 'Products', path: '/products' },
+    { name: 'Blog/News', path: '/blog' },
+    { name: 'Contact', path: '/contact' },
     { name: 'About', path: '/about' },
 ];
 
@@ -86,7 +82,7 @@ const Navbar = () => {
                     </div>
                     </NavLink>
                     <NavLink to={'/'} className="flex items-center justify-center text-center mt-1">
-                        <h1 className={`text-white ${isScrolled ? 'text-xs md:text-2xl' : 'text-sm md:text-2xl'} transition-all duration-700 ease-in-out font-semibold md:font-bold`}
+                        <h1 className={`text-white ${isScrolled ? 'text-xs md:text-base' : 'text-sm md:text-2xl'} transition-all duration-700 ease-in-out font-semibold md:font-bold`}
                             style={{ fontFamily: "'Babylon', sans-serif" }}
                         >
                             Premier Steels
