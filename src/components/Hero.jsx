@@ -30,7 +30,7 @@ const Hero = () => {
         setVideoScale(1.2 + (1 - screenAspectRatio));
       } else {
         // Default scale for wide screens
-        setVideoScale(1.2);
+        setVideoScale(1.5);
       }
     };
 
