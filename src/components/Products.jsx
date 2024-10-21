@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 const products = [
-  { id: '01', name: 'Sponge Iron', image: 'src/assets/steel1.png', description: 'Sponge iron is the key raw material required to manufacture high quality steel. It is quite versatile and can be used in both induction as well as electric arc furnaces.' },
+  { id: '01', name: 'Sponge Iron',image: 'src/assets/steel1.png', description: 'Sponge iron is the key raw material required to manufacture high quality steel. It is quite versatile and can be used in both induction as well as electric arc furnaces.' },
   { id: '02', name: 'Product 2', image: 'src/assets/steel2.png', description: 'Sponge iron is the key raw material required to manufacture high quality steel. It is quite versatile and can be used in both induction as well as electric arc furnaces.' },
   { id: '03', name: 'Product 3', image: 'src/assets/pexels.jpg', description: 'Sponge iron is the key raw material required to manufacture high quality steel. It is quite versatile and can be used in both induction as well as electric arc furnaces.' },
   { id: '04', name: 'Product 4', image: 'src/assets/steel4.png', description: 'Sponge iron is the key raw material required to manufacture high quality steel. It is quite versatile and can be used in both induction as well as electric arc furnaces.' },
@@ -36,7 +36,7 @@ const SteelProductsShowcase = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden ">
       {/* Video background */}
       <video 
         ref={videoRef}

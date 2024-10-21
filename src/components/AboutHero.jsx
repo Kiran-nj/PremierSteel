@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { gsap } from 'gsap';
 
-const Hero = () => {
+const AboutHero = () => {
   const videoRef = useRef(null);
   const containerRef = useRef(null);
   const [videoScale, setVideoScale] = useState(1.2);
@@ -30,7 +30,7 @@ const Hero = () => {
         setVideoScale(1.2 + (1 - screenAspectRatio));
       } else {
         // Default scale for wide screens
-        setVideoScale(1.5);
+        setVideoScale(1.8);
       }
     };
 
@@ -42,11 +42,11 @@ const Hero = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-screen bg-black flex justify-center items-center overflow-hidden "
+      className="relative w-full h-[70vh] bg-black flex justify-center items-center overflow-hidden"
     >
       <ReactPlayer
         ref={videoRef}
-        url="https://youtu.be/cvBaj0gTQl8?si=nJVhbh2QSPytzdY5"
+        url="https://youtu.be/JVROmTknLJA?si=nrhGeSbfgCSJHTBh"
         playing
         loop
         muted
@@ -64,24 +64,23 @@ const Hero = () => {
               controls: 0,
               showinfo: 0,
               modestbranding: 1,
-              start: 42,
+              start: 18,
+              stop:40,
               rel: 0,
             }
           }
         }}
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-      <div className="z-10 text-center text-white px-4">
-        <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-2 sm:mb-4">
-          Premiere Steels
-        </h1>
-        <p className="text-lg sm:text-xl md:text-2xl">
-          Delivering Quality, Strength, and Durability
-        </p>
-      </div>
+      <div className="absolute inset-0  bg-black bg-opacity-30"></div>
+      <div className="absolute bottom-8 left-0 right-0 text-center text-white px-4 z-10">
+  <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-2 sm:mb-4">
+    About Premiere Steels
+  </h1>
+</div>
+
     </div>
   );
 };
 
-export default Hero;
+export default AboutHero;
