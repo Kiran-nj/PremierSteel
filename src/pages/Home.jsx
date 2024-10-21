@@ -1,6 +1,7 @@
 import React from 'react'
 import SteelProductsShowcase from '../components/Products'
 import Hero from '../components/Hero'
+import MiniAbout from './../components/MiniAbout';
 
 
 function Home() {
@@ -8,6 +9,7 @@ function Home() {
     <>
     <Hero />
     <SteelProductsShowcase />
+    <MiniAbout/>
   
     </>
   )
