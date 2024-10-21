@@ -6,12 +6,12 @@ import MiniAbout from './../components/MiniAbout';
 
 function Home() {
   return (
-    <>
-    <Hero />
-    <SteelProductsShowcase />
-    <MiniAbout/>
+    <div className='bg-black'>
+      <Hero />
+      <SteelProductsShowcase />
+      <MiniAbout/>
+    </div>
   
-    </>
   )
 }
 
