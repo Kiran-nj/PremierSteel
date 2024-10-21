@@ -77,9 +77,9 @@ const Navbar = () => {
                 {/* Logo Section */}
                 <div className="flex items-center gap-1 text-center justify-center ">
                     <NavLink to={'/'} className=''>
-                    <div className='bg-red-400  rounded-full overflow-hidden'>
-                        <img src={companyLogo} alt="Company Logo" className={`${isScrolled ? 'w-3 h-3 md:w-6 md:h-6' : 'w-6 h-6 md:w-10 md:h-10'} transition-all duration-700 ease-in-out`} />
-                    </div>
+                        <div className='bg-red-400  rounded-full overflow-hidden'>
+                            <img src={companyLogo} alt="Company Logo" className={`${isScrolled ? 'w-3 h-3 md:w-6 md:h-6' : 'w-6 h-6 md:w-10 md:h-10'} transition-all duration-700 ease-in-out`} />
+                        </div>
                     </NavLink>
                     <NavLink to={'/'} className="flex items-center justify-center text-center mt-1">
                         <h1 className={`text-white ${isScrolled ? 'text-xs md:text-base' : 'text-sm md:text-2xl'} transition-all duration-700 ease-in-out font-semibold md:font-bold`}
@@ -101,7 +101,34 @@ const Navbar = () => {
                 </NavLink> */}
 
                 {/* Hamburger Menu */}
-                <div className="flex justify-center items-center gap-1 cursor-pointer z-50 text-center" onClick={() => setIsOpen(!isOpen)}>
+
+                <div className='hidden md:flex justify-center items-center space-x-7'>
+                    <div className="border border-borderColor rounded-lg px-5 py-2">
+                        <ul className="flex w-full">
+                            {moreList.map((item, index) => (
+                                <li key={index} className="flex-grow">
+                                    <NavLink
+                                        to={item.path}
+                                        className="text-white hover:bg-gray-700 hover:text-green-300 transition duration-300 px-10 py-1 rounded block text-center"
+                                        activeClassName="text-green-400"
+                                    >
+                                        {item.name}
+                                    </NavLink>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    {/* "Get Quote" Button */}
+                    <div className="text-right">
+                        <button className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300">
+                            Get Quote
+                        </button>
+                    </div>
+                </div>
+
+
+
+                <div className="flex md:hidden justify-center items-center gap-1 cursor-pointer z-50 text-center" onClick={() => setIsOpen(!isOpen)}>
                     <button className={`menu__icon ${isOpen ? 'active' : ''}`}>
                         <span></span>
                         <span></span>
