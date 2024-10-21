@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { NavLink } from 'react-router-dom';
-import companyLogo from '../assets/images/company_logo.jpg'; // Update the path to your image
+// import companyLogo from '../assets/images/company_logo.jpg'; // Update the path to your image
+import companyLogo from '../assets/images/company_logo_bg.png'; // Update the path to your image
 import '../assets/css/hamburger.css'
 
 const moreList = [
@@ -77,8 +78,8 @@ const Navbar = () => {
                 {/* Logo Section */}
                 <div className="flex items-center gap-1 text-center justify-center ">
                     <NavLink to={'/'} className=''>
-                        <div className='bg-red-400  rounded-full overflow-hidden'>
-                            <img src={companyLogo} alt="Company Logo" className={`${isScrolled ? 'w-3 h-3 md:w-6 md:h-6' : 'w-6 h-6 md:w-10 md:h-10'} transition-all duration-700 ease-in-out`} />
+                        <div style={{borderRadius: "50%"}} className='bg-red-400 overflow-hidden bg-white p-1 md:p-2'>
+                            <img src={companyLogo} alt="Company Logo" className={`${isScrolled ? 'w-3 h-3 md:w-6 md:h-6' : 'w-5 h-5 md:w-10 md:h-7'} transition-all duration-700 ease-in-out`} />
                         </div>
                     </NavLink>
                     <NavLink to={'/'} className="flex items-center justify-center text-center mt-1">
