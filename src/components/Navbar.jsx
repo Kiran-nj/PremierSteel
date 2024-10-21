@@ -4,14 +4,7 @@ import { NavLink } from 'react-router-dom';
 // import companyLogo from '../assets/images/company_logo.jpg'; // Update the path to your image
 import companyLogo from '../assets/images/company_logo_bg.png'; // Update the path to your image
 import '../assets/css/hamburger.css'
-
-const moreList = [
-    { name: 'Home', path: '/' },
-    { name: 'Products', path: '/products' },
-    { name: 'Blog/News', path: '/blog' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'About', path: '/about' },
-];
+import { moreList } from '../utils/constants';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
