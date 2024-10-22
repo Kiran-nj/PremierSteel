@@ -50,43 +50,25 @@ const FounderSection = () => {
   const teamMembers = [
     {
       role: "Founder",
-      name: "Mr. Gopal A. Parekh",
+      name: "Mr. V A Mohamed Ashraf",
       description: [
-        "Our story is rooted in the remarkable journey of a steel stalwart, Gopal Parekh, who has dedicated over 40 years to the steel industry. Beginning from humble beginnings in a village, he moved to Mumbai and started his career with a job, which eventually led to the founding of a small trading company.",
-        "With perseverance and vision, he, along with his two brothers and his son, Jatin Parekh, laid the foundation for Fortran Steel. Today, happily retired, he remains a vital part of our community, dedicating his time and energy to helping others and inspiring us to continue creating value through our work."
-      ]
+        "Premier steels is established in 1982 by V A Mohamed Ashraf (Achu).",
+        "Premier Steels started as a small business to become one of the most respected names in the Stainless Steel market.",
+        "With a huge stock ranging from S.S Pipes, Sheets, Angles, and various other products all available at competitive prices, we also assure an exceptional quality of our products.",
+        "We are also the authorised dealers of JNB Steels and as said above, quality is our first priority.",
+        "Another product worth mentioning is the Coloured, PVD Coated Stainless Steel Sheet, which is in popular demand for its visual appeal and various other advantages.",
+      ],
+      image: '/src/assets/founder.jpeg' // Image path for founder
     },
     {
       role: "Co-Founder",
-      name: "Mr. Jatin Parekh",
+      name: "Mr. Zakir",
       description: [
-        "Jatin Parekh, with a vision of taking Fortran Steel to new heights, played a pivotal role in transforming the business. His forward-thinking approach and strategic leadership have ensured continued growth and expansion across markets.",
-        "With a commitment to quality and innovation, Jatin spearheaded initiatives that have made Fortran Steel a trusted name in the steel industry."
-      ]
-    },
-    {
-      role: "Chief Operations Officer",
-      name: "Ms. Priya Parekh",
-      description: [
-        "Priya Parekh, the driving force behind the company's operations, ensures seamless coordination between teams. Her leadership in managing day-to-day operations ensures Fortran Steel's continued success in delivering quality products to its customers.",
-        "With a passion for efficiency and excellence, Priya continuously strives to enhance operational workflows and customer satisfaction."
-      ]
-    },
-    {
-      role: "Chief Technology Officer",
-      name: "Mr. Raj Mehta",
-      description: [
-        "Raj Mehta brings over 15 years of technology expertise to Fortran Steel. His innovative approach to digital transformation has revolutionized our operational efficiency and customer service capabilities.",
-        "Under his leadership, we've implemented cutting-edge systems that have streamlined our processes and enhanced our ability to serve our clients better."
-      ]
-    },
-    {
-      role: "Chief Financial Officer",
-      name: "Ms. Anjali Shah",
-      description: [
-        "Anjali Shah, with her extensive background in financial management and strategic planning, has been instrumental in strengthening Fortran Steel's financial foundation.",
-        "Her expertise in financial strategy and risk management has helped secure sustainable growth and maintain strong relationships with stakeholders."
-      ]
+        "Premier steels is established in 1982 by V A Mohamed Ashraf (Achu).",
+        "Premier Steels started as a small business to become one of the most respected names in the Stainless Steel market.",
+        "With a huge stock ranging from S.S Pipes, Sheets, Angles, and various other products all available at competitive prices, we also assure an exceptional quality of our products.",
+      ],
+      image: '/src/assets/CEO1.jpg' // Image path for co-founder
     }
   ];
 
@@ -110,7 +92,7 @@ const FounderSection = () => {
 
             <div className="animate-image w-full md:w-1/2 h-[60vh] opacity-0 scale-90">
               <img
-                                src={`/src/assets/CEO1.jpg`}
+                src={member.image} // Dynamically render the image from teamMembers array
                 alt={member.name}
                 className="w-full h-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
               />

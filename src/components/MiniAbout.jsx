@@ -43,7 +43,7 @@ const MiniAbout = () => {
   }, []);
 
   return (
-    <div className="bg-white py-16 px-6 md:px-20 rounded-lg">
+    <div className="bg-white py-16 px-6 md:px-20 rounded-lg overflow-hidden">
       <div className="flex flex-col md:flex-row items-center gap-10">
         {/* Text Section */}
         <div ref={textRef} className="md:w-1/2">
