@@ -1,8 +1,9 @@
 import React from 'react'
+import Blogs from './../components/BlogPage';
 
 const Blog = () => {
   return (
-    <div>Blog</div>
+    <div><Blogs/></div>
   )
 }
 
