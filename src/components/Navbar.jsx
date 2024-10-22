@@ -139,7 +139,7 @@ const Navbar = () => {
             <div
                 className="backdrop-blur-3xl bg-green-body/60 fixed top-0 left-0 w-full md:w-[60vw] lg:w-[45vw] h-full transform -translate-x-full z-40 menu-container overflow-hidden"
             >
-                <div className="text-red-500 hover:text-[#fff] font-normal flex flex-col justify-center items-center h-full space-y-4 mr-10 md:">
+                <div className="text-red-500 hover:text-[#fff] font-normal flex flex-col justify-center items-center h-full space-y-4 mr-10 md:mr-0">
                     {moreList.map((item, index) => (
                         <NavLink
                             to={item.path}
