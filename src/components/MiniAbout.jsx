@@ -47,7 +47,7 @@ const MiniAbout = () => {
       <div className="flex flex-col md:flex-row items-center gap-10">
         {/* Text Section */}
         <div ref={textRef} className="md:w-1/2">
-          <h3 className="text-gray-600 font-semibold mb-2">ABOUT US</h3>
+          <h3 className="text-gray-600 font-semibold mb-2"></h3>
           <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">The Essence of Premier Steels</h1>
           <p className="text-gray-700 mb-4">
             At Premier Steels, we believe in delivering brilliance in all that we offer.
