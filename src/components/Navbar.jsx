@@ -91,7 +91,8 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
                                 <li key={index} className="flex-grow">
                                     <NavLink
                                         to={item.path}
-                                        className="text-white hover:bg-gray-700 hover:text-green-300 transition duration-300 px-10 py-1 rounded block text-center"
+                            className={({ isActive }) => ` hover:bg-gray-700 hover:text-green-300 transition duration-300 px-10 py-1 rounded block text-center ${isActive ? 'text-green-300 font-bold bg-gray-700' : 'text-white '}`}
+                            // className="text-white hover:bg-gray-700 hover:text-green-300 transition duration-300 px-10 py-1 rounded block text-center"
                                     >
                                         {item.name}
                                     </NavLink>
