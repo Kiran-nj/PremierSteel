@@ -27,7 +27,7 @@ const Contacts = () => {
 
           {/* Right Section: Contact Form */}
           <div>
-            <form onSubmit={"handleSubmit"}>
+            <form>
               <div className="grid grid-cols-1 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
