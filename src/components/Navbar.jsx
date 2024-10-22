@@ -6,7 +6,7 @@ import companyLogo from '../assets/images/company_logo_bg.png'; // Update the pa
 import '../assets/css/hamburger.css'
 import { moreList } from '../utils/constants';
 
-const Navbar = () => {
+const Navbar = ({ setIsEnquiryModalOpen }) => {
     const [isOpen, setIsOpen] = useState(false);
     const commonRef = useRef([]);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -71,7 +71,7 @@ const Navbar = () => {
                 {/* Logo Section */}
                 <div className="flex items-center gap-1 text-center justify-center ">
                     <NavLink to={'/'} className=''>
-                        <div style={{borderRadius: "50%"}} className='bg-red-400 overflow-hidden bg-white p-1 md:p-2'>
+                        <div style={{ borderRadius: "50%" }} className='bg-red-400 overflow-hidden bg-white p-1 md:p-2'>
                             <img src={companyLogo} alt="Company Logo" className={`${isScrolled ? 'w-3 h-3 md:w-6 md:h-6' : 'w-5 h-5 md:w-10 md:h-7'} transition-all duration-700 ease-in-out`} />
                         </div>
                     </NavLink>
@@ -84,18 +84,6 @@ const Navbar = () => {
                     </NavLink>
                 </div>
 
-                {/* Brand Name */}
-                {/* <NavLink to={'/'} className="hidden md:flex items-center">
-                    <h1
-                        style={{ fontFamily: "'Babylon', sans-serif" }}
-                        className={`text-white ${isScrolled ? 'text-xs md:text-xl' : 'text-sm md:text-2xl'} transition-all duration-700 ease-in-out font-semibold md:font-bold`}
-                    >
-                        Premier Steels
-                    </h1>
-                </NavLink> */}
-
-                {/* Hamburger Menu */}
-
                 <div className='hidden md:flex justify-center items-center space-x-7'>
                     <div className="border border-borderColor rounded-lg px-5 py-2">
                         <ul className="flex w-full">
@@ -104,7 +92,6 @@ const Navbar = () => {
                                     <NavLink
                                         to={item.path}
                                         className="text-white hover:bg-gray-700 hover:text-green-300 transition duration-300 px-10 py-1 rounded block text-center"
-                                        activeClassName="text-green-400"
                                     >
                                         {item.name}
                                     </NavLink>
@@ -114,7 +101,10 @@ const Navbar = () => {
                     </div>
                     {/* "Get Quote" Button */}
                     <div className="text-right">
-                        <button className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300">
+                        <button
+                            className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
+                            onClick={() => setIsEnquiryModalOpen(true)} // Open the modal
+                        >
                             Get Quote
                         </button>
                     </div>
@@ -151,6 +141,12 @@ const Navbar = () => {
                             <span>{(item.name)}</span>
                         </NavLink>
                     ))}
+                    <button
+                        className="ml-auto bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
+                        onClick={() => setIsEnquiryModalOpen(true)} // Open the modal
+                    >
+                        Get Quote
+                    </button>
                 </div>
             </div>
         </nav>

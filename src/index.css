@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.custom-toast{
+    font-family: 'Babylon', sans-serif;
+    font-size: .8rem;
+  }
