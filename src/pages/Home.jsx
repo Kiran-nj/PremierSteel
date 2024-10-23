@@ -6,7 +6,7 @@ import MiniAbout from './../components/MiniAbout';
 
 function Home() {
   return (
-    <div className='bg-black'>
+    <div className=''>
       <Hero />
       <SteelProductsShowcase />
       <MiniAbout/>

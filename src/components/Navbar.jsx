@@ -63,20 +63,20 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
 
 
     return (
-        <nav className={` fixed top-0 left-0 flex justify-center w-screen z-50 overflow-hidden bg-green-body/50 ${isScrolled ? 'bg-black':''} transition-colors duration-1000`}>
+        <nav className={` fixed top-0 left-0 flex justify-center w-screen h-24 z-50 overflow-hidden bg-green-body/50 ${isScrolled ? 'bg-black' : ''} transition-colors duration-1000`}>
             <div
-                className={`w-full flex justify-between items-center max-w-7xl px-4 ${isScrolled ? 'py-2 md:py-4' : 'py-4 md:py-7'
+                className={`w-full flex justify-between items-center max-w-screen-2xl px-4 ${isScrolled ? 'py-2 md:py-4' : 'py-4 md:py-7'
                     } transition-all duration-700 ease-in-out`}
             >
                 {/* Logo Section */}
                 <div className="flex items-center gap-1 text-center justify-center ">
                     <NavLink to={'/'} className=''>
-                        <div style={{ borderRadius: "50%" }} className='bg-red-400 overflow-hidden bg-white p-1 md:p-2'>
-                            <img src={companyLogo} alt="Company Logo" className={`${isScrolled ? 'w-3 h-3 md:w-6 md:h-6' : 'w-5 h-5 md:w-10 md:h-7'} transition-all duration-700 ease-in-out`} />
+                        <div style={{ borderRadius: "50%" }} className='bg-red-400 overflow-hidden p-1 md:p-2'>
+                            <img src={companyLogo} alt="Company Logo" className={`w-5 h-5 md:w-10 md:h-7 transition-all duration-700 ease-in-out`} />
                         </div>
                     </NavLink>
                     <NavLink to={'/'} className="flex items-center justify-center text-center mt-1">
-                        <h1 className={`company-font text-white ${isScrolled ? 'text-xs md:text-base' : ''} transition-all duration-700 ease-in-out font-semibold md:font-bold`}
+                        <h1 className={`company-font text-white transition-all duration-700 ease-in-out font-semibold md:font-bold`}
                         >
                             Premier Steels
                         </h1>
@@ -84,17 +84,20 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
                 </div>
 
                 <div className='hidden md:flex justify-center items-center space-x-7'>
-                    <div className="border border-borderColor rounded-lg px-5 py-2">
+                    <div className="px-5 py-2">
                         <ul className="flex w-full">
                             {moreList.map((item, index) => (
-                                <li key={index} className="flex-grow">
+                                <li key={index} className="flex-grow flex items-center justify-center">
                                     <NavLink
                                         to={item.path}
-                            className={({ isActive }) => ` hover:bg-gray-700 hover:text-green-300 transition duration-300 px-10 py-1 rounded block text-center ${isActive ? 'text-green-300 font-bold bg-gray-700' : 'text-white '}`}
-                            // className="text-white hover:bg-gray-700 hover:text-green-300 transition duration-300 px-10 py-1 rounded block text-center"
+                                        className={({ isActive }) => ` hover:text-red transition duration-300 px-6 py-1 rounded block text-center ${isActive ? 'text-red font-bold' : 'text-white '}`}
+                                    // className="text-white hover:bg-gray-700 hover:text-green-300 transition duration-300 px-10 py-1 rounded block text-center"
                                     >
                                         {item.name}
                                     </NavLink>
+                                    {index < moreList.length - 1 && (
+                                        <div className="h-[20px] w-[1px] bg-borderColor ml-4"></div> // Separate div for the right border
+                                    )}
                                 </li>
                             ))}
                         </ul>

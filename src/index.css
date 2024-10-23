@@ -7,8 +7,13 @@
   src: url('/fonts/constan.ttf') format('truetype');
 }
 
+.company-font-only{
+  font-family: 'Constantia', sans-serif;
+}
+
 .company-font{
     font-family: 'Constantia', sans-serif;
+    @apply  text-lg sm:text-xl md:text-3xl;
 }
 
 .hero-section-header{

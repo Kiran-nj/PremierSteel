@@ -36,7 +36,7 @@ const SteelProductsShowcase = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden mt-5">
+    <div className="relative w-full h-screen overflow-hidden">
       {/* Video background */}
       <video 
         ref={videoRef}
