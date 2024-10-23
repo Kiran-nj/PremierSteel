@@ -63,7 +63,7 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
 
 
     return (
-        <nav className={` fixed top-0 left-0 flex justify-center w-screen z-50 overflow-hidden bg-green-body/50`}>
+        <nav className={` fixed top-0 left-0 flex justify-center w-screen z-50 overflow-hidden bg-green-body/50 ${isScrolled ? 'bg-black':''} transition-colors duration-1000`}>
             <div
                 className={`w-full flex justify-between items-center max-w-7xl px-4 ${isScrolled ? 'py-2 md:py-4' : 'py-4 md:py-7'
                     } transition-all duration-700 ease-in-out`}
@@ -76,8 +76,7 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
                         </div>
                     </NavLink>
                     <NavLink to={'/'} className="flex items-center justify-center text-center mt-1">
-                        <h1 className={`text-white ${isScrolled ? 'text-xs md:text-base' : 'text-sm md:text-2xl'} transition-all duration-700 ease-in-out font-semibold md:font-bold`}
-                            style={{ fontFamily: "'Babylon', sans-serif" }}
+                        <h1 className={`company-font text-white ${isScrolled ? 'text-xs md:text-base' : ''} transition-all duration-700 ease-in-out font-semibold md:font-bold`}
                         >
                             Premier Steels
                         </h1>
@@ -103,7 +102,7 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
                     {/* "Get Quote" Button */}
                     <div className="text-right">
                         <button
-                            className="quote-btn bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
+                            className=" bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
                             onClick={() => setIsEnquiryModalOpen(true)} // Open the modal
                         >
                             Get Quote
@@ -143,7 +142,7 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
                         </NavLink>
                     ))}
                     <button
-                        className="quote-btn ml-auto bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
+                        className=" ml-auto bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
                         onClick={() => setIsEnquiryModalOpen(true)} // Open the modal
                     >
                         Get Quote

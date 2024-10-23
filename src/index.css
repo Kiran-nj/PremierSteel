@@ -2,17 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Constantia';
+  src: url('/fonts/constan.ttf') format('truetype');
+}
+
+.company-font{
+    font-family: 'Constantia', sans-serif;
+}
+
+.hero-section-header{
+  @apply text-2xl sm:text-4xl md:text-6xl font-bold;
+}
+
+body {
+  /* font-family: 'Constantia', sans-serif; */
+}
 
 .custom-toast{
     font-family: 'Babylon', sans-serif;
     font-size: .8rem;
   }
-
-.quote-btn{
-  -webkit-box-reflect: below
-  1px linear-gradient(transparent, #0005);
-  box-shadow: 0 0 5px #03e914, 0 0 15px #03e914, 0 0 25px #03e914, 0 0 100px #03e914;
-}
 
 .active-nav-comp{
   /* box-shadow: 2px 2px 20px cyan; */

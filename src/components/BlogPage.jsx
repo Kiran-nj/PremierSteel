@@ -33,7 +33,7 @@ const Blogs = () => {
   }, []);
 
   return (
-    <div className="relative max-w-7xl mx-auto px-4 py-16">
+    <div className="relative max-w-7xl mx-auto px-4 py-24">
       {/* Background Image with Opacity and Grayscale */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
@@ -49,7 +49,7 @@ const Blogs = () => {
 
       {/* Blog Content */}
       <div className="relative z-10 text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800">ON THE BLOG</h1>
+        <h1 className="hero-section-header text-gray-800">ON THE BLOG</h1>
         <p className="text-lg text-gray-500 mt-4">Website Exclusive - Steel Industry Insights</p>
       </div>
 

@@ -74,8 +74,8 @@ const AboutHero = () => {
       />
       <div className="absolute inset-0  bg-black bg-opacity-30"></div>
       <div className="absolute bottom-8 left-0 right-0 text-center text-white px-4 z-10">
-  <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-2 sm:mb-4">
-    About Premiere Steels
+  <h1 className="hero-section-header mb-2 sm:mb-4">
+    About Us
   </h1>
 </div>
 

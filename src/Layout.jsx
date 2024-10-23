@@ -15,12 +15,12 @@ const Layout = () => {
       <ToastContainer toastClassName="custom-toast" />
       <Navbar setIsEnquiryModalOpen={setIsEnquiryModalOpen} />
       <div>
-      <Outlet />
+        <Outlet />
 
-      <EnquiryModal
-        isEnquiryModalOpen={isEnquiryModalOpen}
-        setIsEnquiryModalOpen={setIsEnquiryModalOpen}
-      />
+        <EnquiryModal
+          isEnquiryModalOpen={isEnquiryModalOpen}
+          setIsEnquiryModalOpen={setIsEnquiryModalOpen}
+        />
       </div>
 
       <Footer />

@@ -74,7 +74,7 @@ const HeroContactsSection = () => {
       />
       <div className="absolute inset-0  bg-black bg-opacity-30"></div>
       <div className="absolute bottom-8 left-0 right-0 text-center text-white px-4 z-10">
-        <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold mb-2 sm:mb-4">
+        <h1 className="hero-section-header mb-2 sm:mb-4">
           Contact Us
         </h1>
       </div>

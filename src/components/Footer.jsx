@@ -30,8 +30,7 @@ function Footer() {
           </NavLink>
           <NavLink to={'/'} className="flex items-center justify-center text-center">
             <h1
-              className={` text-sm md:text-2xl transition-all duration-700 ease-in-out font-semibold md:font-bold`}
-              style={{ fontFamily: "'Babylon', sans-serif" }}
+              className={`company-font text-sm md:text-2xl transition-all duration-700 ease-in-out font-semibold md:font-bold`}
             >
               Premier Steels
             </h1>

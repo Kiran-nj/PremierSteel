@@ -60,12 +60,12 @@ const ProductHero = () => {
         }}
         config={{
           youtube: {
-            playerVars: { 
+            playerVars: {
               controls: 0,
               showinfo: 0,
               modestbranding: 1,
               start: 18,
-              stop:40,
+              stop: 40,
               rel: 0,
             }
           }
@@ -74,10 +74,10 @@ const ProductHero = () => {
       />
       <div className="absolute inset-0  bg-black bg-opacity-30"></div>
       <div className="absolute bottom-8 left-0 right-0 text-center text-white px-4 z-10">
-  <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-2 sm:mb-4">
-   Premiere Steels Products
-  </h1>
-</div>
+        <h1 className="hero-section-header mb-2 sm:mb-4">
+          Our Products
+        </h1>
+      </div>
 
     </div>
   );
