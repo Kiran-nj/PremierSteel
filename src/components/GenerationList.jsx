@@ -68,7 +68,7 @@ const FounderSection = () => {
         "Premier Steels started as a small business to become one of the most respected names in the Stainless Steel market.",
         "With a huge stock ranging from S.S Pipes, Sheets, Angles, and various other products all available at competitive prices, we also assure an exceptional quality of our products.",
       ],
-      image: '/src/assets/CEO1.jpg' // Image path for co-founder
+      image: '/src/assets/founder.jpeg' // Image path for co-founder
     }
   ];
 

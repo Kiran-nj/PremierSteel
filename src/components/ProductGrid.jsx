@@ -8,7 +8,7 @@ const projects = [
     { title: 'MS Flats',category: 'Energy / Tools', imageSrc: '/src/assets/steelangles.jpg' },
     { title: 'MS Rounds',category: 'Energy / Tools', imageSrc: '/src/assets/round.jpg' },
     { title: 'MS Squares',category: 'Energy / Tools', imageSrc: '/src/assets/squareandround.jpg' },
-    { title: 'GI Sheets',category: 'Energy / Tools', imageSrc: '/src/assets/sheet2.jpg' },
+    { title: 'MS Chequered Plates',category: 'Energy / Tools', imageSrc: '/src/assets/sheet2.jpg' },
     { title: 'GP/MS Tubes & Pipes',category: 'Energy / Tools', imageSrc: '/src/assets/squareandround.jpg' },
   ];
 const ProjectGrid = () => {

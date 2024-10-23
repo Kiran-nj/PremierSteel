@@ -74,7 +74,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
       <div className="z-10 text-center text-white px-4">
         <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-2 sm:mb-4">
-          Premiere Steels
+          Premier Steels
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl">
           Delivering Quality, Strength, and Durability

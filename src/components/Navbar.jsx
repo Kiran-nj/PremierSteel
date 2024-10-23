@@ -103,7 +103,7 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
                     {/* "Get Quote" Button */}
                     <div className="text-right">
                         <button
-                            className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
+                            className="quote-btn bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
                             onClick={() => setIsEnquiryModalOpen(true)} // Open the modal
                         >
                             Get Quote
@@ -143,7 +143,7 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
                         </NavLink>
                     ))}
                     <button
-                        className="ml-auto bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
+                        className="quote-btn ml-auto bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
                         onClick={() => setIsEnquiryModalOpen(true)} // Open the modal
                     >
                         Get Quote
