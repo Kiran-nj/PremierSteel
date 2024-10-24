@@ -24,6 +24,7 @@ body {
   /* font-family: 'Constantia', sans-serif; */
 }
 
+/* scrollbar css */
 body::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -52,4 +53,35 @@ body::-webkit-scrollbar-thumb {
 .active-nav-comp {
   /* box-shadow: 2px 2px 20px cyan; */
   filter: drop-shadow(2px 2px 20px cyan);
+}
+
+/* home hero section video */
+.homepage-video-iframe {
+  width: 100vw;
+  height: 56.25vw; /* Aspect ratio of 16:9 */
+  min-height: 100vh;
+  min-width: 177.77vh; /* Aspect ratio of 16:9 */
+  object-fit: cover;
+  transform-origin: center center;
+}
+
+@media (max-width: 767px) {
+  /* For small devices */
+  .homepage-video-iframe {
+    transform: scale(1.5);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1919px) {
+  /* For medium and larger devices */
+  .homepage-video-iframe {
+    transform: scale(1.4);
+  }
+}
+
+@media (min-width: 1920px) {
+  /* For TV or very large screens */
+  .homepage-video-iframe {
+    transform: scale(2.0); /* Higher scale for TV */
+  }
 }

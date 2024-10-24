@@ -17,22 +17,13 @@ const Hero = () => {
     <div ref={containerRef} className="relative w-full h-screen overflow-hidden">
       {/* YouTube Video */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-        <iframe
-          className="absolute top-0 left-0"
+      <iframe
+          className="homepage-video-iframe absolute top-0 left-0 w-full h-full"
           src="https://www.youtube.com/embed/cvBaj0gTQl8?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&loop=1&playlist=cvBaj0gTQl8"
           title="YouTube video"
           frameBorder="0"
           allow="autoplay; encrypted-media"
           allowFullScreen
-          style={{
-            width: '100vw',
-            height: '56.25vw', // Aspect ratio of 16:9
-            minHeight: '100vh',
-            minWidth: '177.77vh', // Aspect ratio of 16:9 for height
-            objectFit: 'cover',
-            transform: 'scale(1.5)', // Scale the video to remove top/bottom bars
-            transformOrigin: 'center center', // Keep scaling centered
-          }}
         ></iframe>
       </div>
 
