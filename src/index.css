@@ -68,7 +68,7 @@ body::-webkit-scrollbar-thumb {
 @media (max-width: 767px) {
   /* For small devices */
   .homepage-video-iframe {
-    transform: scale(1.5);
+    transform: scale(1.4);
   }
 }
 
