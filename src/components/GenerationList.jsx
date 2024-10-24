@@ -61,7 +61,7 @@ const FounderSection = () => {
       image: '/src/assets/founder.jpeg' // Image path for founder
     },
     {
-      role: "Co-Founder",
+      role: "CEO",
       name: "Mr. Zakir",
       description: [
         "Premier steels is established in 1982 by V A Mohamed Ashraf (Achu).",
@@ -80,7 +80,7 @@ const FounderSection = () => {
             key={member.name}
             className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center justify-between gap-12`}
           >
-            <div className="animate-text w-full md:w-1/2 text-left opacity-0">
+            <div className="animate-text w-full text-left opacity-0">
               <h3 className="font-bold text-lg text-gray-700 uppercase mb-4">{member.role}</h3>
               <h2 className="text-3xl font-semibold text-gray-900 mb-6">{member.name}</h2>
               {member.description.map((paragraph, idx) => (
@@ -90,13 +90,13 @@ const FounderSection = () => {
               ))}
             </div>
 
-            <div className="animate-image w-full md:w-1/2 h-[60vh] opacity-0 scale-90">
+            {/* <div className="animate-image w-full md:w-1/2 h-[60vh] opacity-0 scale-90">
               <img
                 src={member.image} // Dynamically render the image from teamMembers array
                 alt={member.name}
                 className="w-full h-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
               />
-            </div>
+            </div> */}
           </div>
         ))}
       </div>

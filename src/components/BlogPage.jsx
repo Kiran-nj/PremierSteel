@@ -35,7 +35,7 @@ const Blogs = () => {
   return (
     <div className="relative max-w-7xl mx-auto px-4 py-24">
       {/* Background Image with Opacity and Grayscale */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${steel5})`,
@@ -58,7 +58,7 @@ const Blogs = () => {
         <BlogCard image={steel1} title="Innovative Steel Technologies">
           The steel industry is at the forefront of innovation with new technologies enhancing production efficiency, sustainability, and product strength. Discover how cutting-edge advancements are shaping the future of steel.
         </BlogCard>
-        
+
         <BlogCard image={steel2} title="Sustainable Steel Production">
           Learn about sustainable practices in steel production, such as reducing carbon emissions, using renewable energy, and recycling steel products, which help contribute to a greener future.
         </BlogCard>

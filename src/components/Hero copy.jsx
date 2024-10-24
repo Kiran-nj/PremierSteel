@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import ReactPlayer from 'react-player';
 import { gsap } from 'gsap';
 
 const Hero = () => {
@@ -16,29 +15,16 @@ const Hero = () => {
 
   return (
     <div ref={containerRef} className="relative w-full h-screen overflow-hidden">
-      {/* ReactPlayer for YouTube Video */}
+      {/* YouTube Video */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-        <ReactPlayer
-          url="https://www.youtube.com/watch?v=cvBaj0gTQl8"
+      <iframe
           className="homepage-video-iframe absolute top-0 left-0 w-full h-full"
-          playing
-          muted
-          controls={false}
-          loop
-          start={42}         
-          end={78}           
-          config={{
-            youtube: {
-              playerVars: {
-                modestbranding: 1,
-                showinfo: 0,
-                rel: 0,
-                start: 42,     // Start at 41 seconds
-                end: 78,       // End at 78 seconds
-              },
-            },
-          }}
-        />
+          src="https://www.youtube.com/embed/cvBaj0gTQl8?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&loop=1&playlist=cvBaj0gTQl8"
+          title="YouTube video"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        ></iframe>
       </div>
 
       {/* Text Overlay */}
