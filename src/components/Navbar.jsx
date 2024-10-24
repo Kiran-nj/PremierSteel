@@ -87,7 +87,7 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
                     <div className="px-5 py-2">
                         <ul className="flex w-full">
                             {moreList.map((item, index) => (
-                                <li key={index} className="flex-grow flex items-center justify-center">
+                                <li key={index} className="flex-grow flex items-center justify-center uppercase">
                                     <NavLink
                                         to={item.path}
                                         className={({ isActive }) => ` hover:text-red transition duration-300 px-6 py-1 rounded block text-center ${isActive ? 'text-red font-bold' : 'text-white '}`}
