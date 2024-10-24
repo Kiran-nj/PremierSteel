@@ -63,9 +63,9 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
 
 
     return (
-        <nav className={` fixed top-0 left-0 flex justify-center w-screen h-24 z-50 overflow-hidden bg-green-body/50 ${isScrolled ? 'bg-black' : ''} transition-colors duration-1000`}>
+        <nav className={` fixed top-0 left-0 flex justify-center w-screen z-50 md:h-24 overflow-hidden bg-green-body/50 ${isScrolled ? 'bg-black' : ''} transition-colors duration-1000`}>
             <div
-                className={`w-full flex justify-between items-center max-w-screen-2xl px-4 ${isScrolled ? 'py-2 md:py-4' : 'py-4 md:py-7'
+                className={`w-full flex justify-between items-center max-w-screen-2xl px-4 ${isScrolled ? 'py-3 md:py-4' : 'py-4 md:py-7'
                     } transition-all duration-700 ease-in-out`}
             >
                 {/* Logo Section */}
@@ -129,6 +129,7 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
 
 
 
+            {/* mobile */}
             <div
                 className="backdrop-blur-3xl bg-green-body/60 fixed top-0 left-0 w-full md:w-[60vw] lg:w-[45vw] h-full transform -translate-x-full z-40 menu-container overflow-hidden"
             >

@@ -1,84 +1,69 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player';
 import { gsap } from 'gsap';
 
 const AboutHero = () => {
-  const videoRef = useRef(null);
   const containerRef = useRef(null);
-  const [videoScale, setVideoScale] = useState(1.2);
+  const playerRef = useRef(null);
 
   useEffect(() => {
+    // Fade-in animation for the container
     gsap.fromTo(
       containerRef.current,
       { opacity: 0 },
       { opacity: 1, duration: 1.5 }
     );
-
-    const calculateVideoScale = () => {
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
-      const videoAspectRatio = 16 / 9;
-      const screenAspectRatio = viewportWidth / viewportHeight;
-
-      if (viewportWidth <= 640) { // For small screens (sm breakpoint in Tailwind)
-        // Increased base scale for mobile devices
-        setVideoScale(4.3 + (1 - screenAspectRatio));
-      } else if (viewportWidth <= 768) { // For medium screens (md breakpoint)
-        setVideoScale(1.8 + (1 - screenAspectRatio));
-      } else if (screenAspectRatio < videoAspectRatio) {
-        // For larger screens with narrow aspect ratio
-        setVideoScale(1.2 + (1 - screenAspectRatio));
-      } else {
-        // Default scale for wide screens
-        setVideoScale(1.8);
-      }
-    };
-
-    calculateVideoScale();
-    window.addEventListener('resize', calculateVideoScale);
-    return () => window.removeEventListener('resize', calculateVideoScale);
   }, []);
 
+  const handleProgress = (progress) => {
+    // Check if current time is greater than 60 seconds (1 minute)
+    if (progress.playedSeconds >= 60) {
+      playerRef.current.seekTo(10); // Seek back to 10 seconds
+    }
+  };
+
   return (
-    <div
-      ref={containerRef}
-      className="relative w-full h-[70vh] bg-black flex justify-center items-center overflow-hidden"
-    >
+    <div ref={containerRef} className="relative w-full h-[50vh] md:h-[70vh] overflow-hidden">
+      {/* React Player */}
       <ReactPlayer
-        ref={videoRef}
-        url="https://youtu.be/JVROmTknLJA?si=nrhGeSbfgCSJHTBh"
-        playing
-        loop
-        muted
+        ref={playerRef}
+        className="absolute top-0 left-0"
+        url="https://www.youtube.com/watch?v=FMnuXTN2Bvw"
+        playing={true}
+        muted={true}
+        controls={false}
         width="100%"
         height="100%"
         style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: `translate(-50%, -50%) scale(${videoScale})`,
+          width: '100vw',
+          height: '56.25vw', // Aspect ratio of 16:9
+          minHeight: '100vh',
+          minWidth: '177.77vh', // Aspect ratio of 16:9 for height
+          objectFit: 'cover',
+          transform: 'scale(1.4)', // Scale the video to remove top/bottom bars
+          transformOrigin: 'center center', // Keep scaling centered
         }}
+        onProgress={handleProgress}
         config={{
           youtube: {
-            playerVars: { 
-              controls: 0,
-              showinfo: 0,
+            playerVars: {
+              autoplay: 1,
+              start: 10, // Start at 10 seconds
+              end: 60,   // Optional: Set an end time for the player
+              loop: 1,
               modestbranding: 1,
-              start: 18,
-              stop:40,
-              rel: 0,
-            }
-          }
+              showinfo: 0,
+            },
+          },
         }}
-        className="object-cover"
       />
-      <div className="absolute inset-0  bg-black bg-opacity-30"></div>
-      <div className="absolute bottom-8 left-0 right-0 text-center text-white px-4 z-10">
-  <h1 className="hero-section-header mb-2 sm:mb-4">
-    About Us
-  </h1>
-</div>
 
+      {/* Text Overlay */}
+      <div className="absolute inset-0 bg-transparent flex items-center justify-center">
+      <h1 className="hero-section-header mb-2 sm:mb-4">
+          About Us
+        </h1>
+      </div>
     </div>
   );
 };

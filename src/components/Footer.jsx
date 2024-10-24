@@ -71,9 +71,9 @@ function Footer() {
                   rows="4"
                 />
                 <div className='w-full md:w-1/2  md:pr-3'>
-                <button type="submit" className="bg-green-500 text-white py-2 rounded-md hover:bg-green-600 w-full text-xs md:text-base mr-10"> {/* Added w-full for full width */}
-                  Send Message
-                </button>
+                  <button type="submit" className="bg-green-500 text-white py-2 rounded-md hover:bg-green-600 w-full text-xs md:text-base"> {/* Added w-full for full width */}
+                    Send Message
+                  </button>
                 </div>
               </form>
             </div>
