@@ -55,7 +55,7 @@ body::-webkit-scrollbar-thumb {
   filter: drop-shadow(2px 2px 20px cyan);
 }
 
-/* home hero section video */
+/* HOME */
 .homepage-video-iframe {
   width: 100vw;
   height: 56.25vw; /* Aspect ratio of 16:9 */
@@ -84,4 +84,11 @@ body::-webkit-scrollbar-thumb {
   .homepage-video-iframe {
     transform: scale(2.0); /* Higher scale for TV */
   }
+}
+
+.partner-images{
+  /* width: 15%; */
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  /* mix-blend-mode: color-burn; */
 }

@@ -17,7 +17,6 @@ function App() {
          <Route path="/blog" element={<Blog />} />
          <Route path="/contact" element={<Contacts />} />
          <Route path="/about" element={<About />} />
-
          
       </Route>
       //   {/* <Route path="*" element={<NotFoundPage />} /> */}

@@ -14,8 +14,8 @@ import { companyEmail, companyPhoneNo } from '../utils/constants';
 
 function Footer() {
   return (
-    <div className='bg-borderColor'>
-      <div className=' text-black pt-4'>
+    <div className='bg-black'>
+      <div className=' text-white pt-4'>
 
         {/* Logo and Company Name Section */}
         <div className="flex items-center justify-center ">
@@ -40,7 +40,7 @@ function Footer() {
             <div className="flex justify-center items-center md:w-1/3 md:h-64 md:mb-0 order-3 md:order-3 pt-0 md:pt-0">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.4082834858555!2d76.28874327503091!3d9.983093090121452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d48f57a27df%3A0xbd8601238c88e7ce!2sPremier%20Steels!5e0!3m2!1sen!2sin!4v1729509089342!5m2!1sen!2sin"
-                className='w-full h-full rounded-xl'
+                className='w-full h-full'
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
@@ -57,21 +57,21 @@ function Footer() {
                   <input
                     type="text"
                     placeholder="Your Name"
-                    className="p-2 bg-gray-200 text-black rounded-md focus:outline-none w-full placeholder:text-xs md:placeholder:text-base" // Added w-full for full width
+                    className="p-2 bg-gray-200 text-black focus:outline-none w-full placeholder:text-xs md:placeholder:text-base" // Added w-full for full width
                   />
                   <input
                     type="email"
                     placeholder="Your Email"
-                    className="p-2 bg-gray-200 text-black rounded-md focus:outline-none w-full placeholder:text-xs md:placeholder:text-base" // Added w-full for full width
+                    className="p-2 bg-gray-200 text-black focus:outline-none w-full placeholder:text-xs md:placeholder:text-base" // Added w-full for full width
                   />
                 </div>
                 <textarea
                   placeholder="Your Message"
-                  className="p-2 bg-gray-200 text-black rounded-md focus:outline-none w-full placeholder:text-xs md:placeholder:text-base" // Added w-full for full width
+                  className="p-2 bg-gray-200 text-black focus:outline-none w-full placeholder:text-xs md:placeholder:text-base" // Added w-full for full width
                   rows="4"
                 />
                 <div className='w-full md:w-1/2  md:pr-3'>
-                  <button type="submit" className="bg-green-500 text-white py-2 rounded-md hover:bg-green-600 w-full text-xs md:text-base"> {/* Added w-full for full width */}
+                  <button type="submit" className="bg-green-500 text-white py-2 hover:bg-green-600 w-full text-xs md:text-base"> {/* Added w-full for full width */}
                     Send Message
                   </button>
                 </div>
@@ -117,7 +117,7 @@ function Footer() {
 
 
         {/* Footer Section */}
-        <footer className="text-borderColor py-3 md:py-7 bg-black mt-4">
+        <footer className="text-borderColor py-3 md:py-7 bg-zinc mt-4">
           <div className="container mx-auto">
             <div className=" container flex flex-col items-center px-4 md:px-8 font-josefin">
               <div className="w-full flex flex-col items-center text-[.6rem] md:text-[.7rem]">
