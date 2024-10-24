@@ -1,23 +1,24 @@
 import React from 'react';
+import { projects } from '../utils/constants';
 
-const projects = [
-    { title: 'MS Joints',category: 'Energy / Tools', imageSrc: '/src/assets/steelangles.jpg' },
-    { title: 'MS Channels',category: 'Energy / Tools', imageSrc: '/src/assets/channel.jpg' },
-    { title: 'MS Plates',category: 'Energy / Tools', imageSrc: '/src/assets/sheet.jpg' },
-    { title: 'MS Angles',category: 'Energy / Tools', imageSrc: '/src/assets/angles.jpg' },
-    { title: 'MS Flats',category: 'Energy / Tools', imageSrc: '/src/assets/steelangles.jpg' },
-    { title: 'MS Rounds',category: 'Energy / Tools', imageSrc: '/src/assets/round.jpg' },
-    { title: 'MS Squares',category: 'Energy / Tools', imageSrc: '/src/assets/squareandround.jpg' },
-    { title: 'MS Chequered Plates',category: 'Energy / Tools', imageSrc: '/src/assets/sheet2.jpg' },
-    { title: 'GP/MS Tubes & Pipes',category: 'Energy / Tools', imageSrc: '/src/assets/squareandround.jpg' },
-  ];
+// const projects = [
+//     { title: 'MS Joints',category: 'Energy / Tools', imageSrc: '/src/assets/steelangles.jpg' },
+//     { title: 'MS Channels',category: 'Energy / Tools', imageSrc: '/src/assets/channel.jpg' },
+//     { title: 'MS Plates',category: 'Energy / Tools', imageSrc: '/src/assets/sheet.jpg' },
+//     { title: 'MS Angles',category: 'Energy / Tools', imageSrc: '/src/assets/angles.jpg' },
+//     { title: 'MS Flats',category: 'Energy / Tools', imageSrc: '/src/assets/steelangles.jpg' },
+//     { title: 'MS Rounds',category: 'Energy / Tools', imageSrc: '/src/assets/round.jpg' },
+//     { title: 'MS Squares',category: 'Energy / Tools', imageSrc: '/src/assets/squareandround.jpg' },
+//     { title: 'MS Chequered Plates',category: 'Energy / Tools', imageSrc: '/src/assets/sheet2.jpg' },
+//     { title: 'GP/MS Tubes & Pipes',category: 'Energy / Tools', imageSrc: '/src/assets/squareandround.jpg' },
+//   ];
 const ProjectGrid = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 px-4 py-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 px-4 py-8 bg-black">
       {projects.map((project, index) => (
         <div
           key={index}
-          className="relative group h-80 overflow-hidden rounded-lg shadow-lg"
+          className="relative group h-80 overflow-hidden shadow-lg"
           style={{ backgroundImage: `url(${project.imageSrc})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         >
           {/* Overlay on hover */}

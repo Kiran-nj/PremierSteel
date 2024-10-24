@@ -1,46 +1,53 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-
-const products = [
-  { id: '01', name: 'Sponge Iron',image: 'src/assets/steel1.png', description: 'Sponge iron is the key raw material required to manufacture high quality steel. It is quite versatile and can be used in both induction as well as electric arc furnaces.' },
-  { id: '02', name: 'Product 2', image: 'src/assets/steel2.png', description: 'Sponge iron is the key raw material required to manufacture high quality steel. It is quite versatile and can be used in both induction as well as electric arc furnaces.' },
-  { id: '03', name: 'Product 3', image: 'src/assets/pexels.jpg', description: 'Sponge iron is the key raw material required to manufacture high quality steel. It is quite versatile and can be used in both induction as well as electric arc furnaces.' },
-  { id: '04', name: 'Product 4', image: 'src/assets/steel4.png', description: 'Sponge iron is the key raw material required to manufacture high quality steel. It is quite versatile and can be used in both induction as well as electric arc furnaces.' },
-];
+import { featuredProjects } from '../utils/constants';
 
 const SteelProductsShowcase = () => {
   const sectionRefs = useRef([]);
   const videoRef = useRef(null);
 
   useEffect(() => {
-    if (videoRef.current) {
+    // Only play video if the viewport is not mobile
+    const isMobile = window.innerWidth < 768;
+
+    if (!isMobile && videoRef.current) {
       videoRef.current.play().catch(error => {
         console.error("Video autoplay failed:", error);
       });
     }
-    
+
     sectionRefs.current.forEach((section, index) => {
-      gsap.set(section.querySelector('.product-image'), { opacity: 0 });
-      gsap.set(section.querySelector('.product-info'), { y: 0, opacity: 1 });
+      const productImage = section.querySelector('.product-image');
+      const productInfo = section.querySelector('.product-info');
 
-      section.addEventListener('mouseenter', () => {
-        gsap.to(section.querySelector('.product-image'), { opacity: 1, duration: 0.3 });
-        gsap.to(section.querySelector('.product-info'), { y: 0, opacity: 1, duration: 0.3 });
-      });
+      // For non-mobile view, apply hover effects
+      if (!isMobile) {
+        gsap.set(productImage, { opacity: 0 });
+        gsap.set(productInfo, { y: 0, opacity: 1 });
 
-      section.addEventListener('mouseleave', () => {
-        gsap.to(section.querySelector('.product-image'), { opacity: 0, duration: 0.3 });
-        gsap.to(section.querySelector('.product-info'), { y: 0, opacity: 1, duration: 0.3 });
-      });
+        section.addEventListener('mouseenter', () => {
+          gsap.to(productImage, { opacity: 1, duration: 0.3 });
+          gsap.to(productInfo, { y: 0, opacity: 1, duration: 0.3 });
+        });
+
+        section.addEventListener('mouseleave', () => {
+          gsap.to(productImage, { opacity: 0, duration: 0.3 });
+          gsap.to(productInfo, { y: 0, opacity: 1, duration: 0.3 });
+        });
+      } else {
+        // For mobile view, display the product info by default
+        gsap.set(productImage, { opacity: 1 });
+        gsap.set(productInfo, { y: 0, opacity: 1 });
+      }
     });
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      {/* Video background */}
-      <video 
+    <div className="relative w-full h-auto md:h-screen overflow-hidden mt-2">
+      {/* Video background, hidden on mobile */}
+      <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover hidden md:block"
         src="src/assets/vidcomp1.mp4"
         loop
         muted
@@ -48,24 +55,24 @@ const SteelProductsShowcase = () => {
       />
 
       {/* Product sections */}
-      <div className="relative w-full h-full flex flex-col md:flex-row">
-        {products.map((product, index) => (
+      <div className="relative w-full h-full flex flex-col md:flex-row bg-black/60">
+        {featuredProjects.map((product, index) => (
           <div
             key={product.id}
             ref={el => sectionRefs.current[index] = el}
-            className="w-full md:w-1/4 h-1/2 md:h-full relative overflow-hidden cursor-pointer"
+            className="group w-full md:w-1/4 h-[40vh] md:h-full relative overflow-hidden cursor-pointer"
           >
             {/* Product image overlay */}
-            <div 
+            <div
               className="product-image absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${product.image})` }}
             />
 
             {/* Product info */}
-            <div className="product-info absolute bottom-0 left-0 p-4 text-white shadow-text-black text-center md:text-left">
-              <h2 className="text-2xl md:text-4xl font-bold mb-2">{product.id}</h2>
-              <h3 className="text-xl md:text-2xl font-semibold mb-2">{product.name}</h3>
-              <p className="text-xs md:text-sm">{product.description}</p>
+            <div className="product-info w-full bg-gray/50 md:bg-transparent group-hover:bg-gray/60 px-2 absolute bottom-0 inset-x-0 flex flex-col items-start justify-start gap-1 py-2 md:py-4">
+              <span className="text-white text-xl sm:text-2xl md:text-2xl lg:text-4xl font-bold drop-shadow-md">
+                {product.name}
+              </span>
             </div>
           </div>
         ))}

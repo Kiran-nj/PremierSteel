@@ -7,7 +7,7 @@ import StrategicPartners from '../components/Partners';
 
 function Home() {
   return (
-    <div className=''>
+    <div className='bg-black'>
       <Hero />
       <SteelProductsShowcase />
       <MiniAbout/>

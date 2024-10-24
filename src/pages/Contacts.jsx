@@ -5,7 +5,7 @@ import { companyEmail, companyPhoneNo } from '../utils/constants'
 
 const Contacts = () => {
   return (
-    <div>
+    <div className='bg-black text-white'>
       <HeroContactsSection /> {/* this has the video */}
       <div className="container mx-auto p-6 bg-gray-100 rounded-lg shadow-lg m-6">
         <h2 className="text-2xl md:text-3xl font-semibold text-start mb-4">Contact Us</h2>

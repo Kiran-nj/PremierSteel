@@ -71,9 +71,22 @@ function Footer() {
                   rows="4"
                 />
                 <div className='w-full md:w-1/2  md:pr-3'>
-                  <button type="submit" className="bg-green-500 text-white py-2 hover:bg-green-600 w-full text-xs md:text-base"> {/* Added w-full for full width */}
-                    Send Message
-                  </button>
+
+                <button type="submit" className="ml-auto cursor-pointer relative group overflow-hidden border-2 px-4 py-2 border-[#E5B80B]"
+                    >
+                        {/* Text content */}
+                        <span className="font-bold text-white text-sm relative z-10 group-hover:text-[#E5B80B] duration-500">
+                        Send Message
+                        </span>
+
+                        {/* Background spans */}
+                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:-translate-x-full h-full"></span>
+                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:translate-x-full h-full"></span>
+
+                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
+                        <span className="absolute delay-300 top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:translate-y-full h-full"></span>
+                    </button>
+
                 </div>
               </form>
             </div>
@@ -82,21 +95,21 @@ function Footer() {
             <div className="text-xs md:text-base flex flex-col w-full px-5 md:w-auto mx-4 mb-6 md:mb-0 order-2 md:order-1 uppercase">
               {/* Find Us At Section */}
               <div className="mt-6 md:mt-0 flex flex-col text-center md:text-start">
-                <h3 className="text-sm font-semibold underline">Find us at</h3>
+                <h3 className="text-sm font-semibold text-red">Find us at</h3>
                 <p>Premier Steels</p>
                 <p>Stock Yard, Pullepady Road</p>
                 <p>Ernakulam, PIN: 628017</p>
               </div>
               {/* Get In Touch Section */}
               <div className="mt-4 flex flex-col text-center md:text-start">
-                <h3 className="text-sm font-semibold underline">Get In Touch</h3>
+                <h3 className="text-sm font-semibold text-red">Get In Touch</h3>
                 <p>Phone: +91 {companyPhoneNo}</p>
                 <p>Email: {companyEmail}</p>
               </div>
 
 
-              <div className="flex justify-center md:justify-start mt-4 space-x-4 footer text-black">
-                <a className="flex justify-center items-center" href={`https://wa.me/${companyPhoneNo}`} target='blank'>
+              <div className="flex justify-center md:justify-start mt-4 space-x-4 footer">
+                <a className="flex justify-center items-center" href={`https://wa.me/+91${companyPhoneNo}`} target='blank'>
                   <FaWhatsapp size={"1.5rem"} className=" cursor-pointer footer" />
                 </a>
                 <a className="flex justify-center items-center" href="https://www.facebook.com/people/Luxe-Moto/61556341210047/" target='blank'>

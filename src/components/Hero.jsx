@@ -28,7 +28,7 @@ const Hero = () => {
       </div>
 
       {/* Text Overlay */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="bg-black/60 absolute inset-0 flex items-center justify-center">
         <div className="text-center text-white px-4">
           <h1 className="company-font-only text-5xl sm:text-6xl md:text-[5.2rem] font-bold">
             Premier Steels

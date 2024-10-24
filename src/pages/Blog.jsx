@@ -3,7 +3,7 @@ import Blogs from './../components/BlogPage';
 
 const Blog = () => {
   return (
-    <div><Blogs/></div>
+    <div className='bg-black'><Blogs/></div>
   )
 }
 

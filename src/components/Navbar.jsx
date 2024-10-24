@@ -103,14 +103,30 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
                         </ul>
                     </div>
                     {/* "Get Quote" Button */}
-                    <div className="text-right">
+                    <button className="cursor-pointer relative group overflow-hidden border-2 px-4 py-2 border-[#E5B80B]"
+                        onClick={() => setIsEnquiryModalOpen(true)}
+                    >
+                        {/* Text content */}
+                        <span className="font-bold text-white text-xl relative z-10 group-hover:text-[#E5B80B] duration-500">
+                            Get Quote
+                        </span>
+
+                        {/* Background spans */}
+                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:-translate-x-full h-full"></span>
+                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:translate-x-full h-full"></span>
+
+                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
+                        <span className="absolute delay-300 top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:translate-y-full h-full"></span>
+                    </button>
+
+                    {/* <div className="text-right">
                         <button
-                            className=" bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
+                            className=" bg-[#00FFFF] text-black px-4 py-2 hover:bg-green-600 transition duration-300"
                             onClick={() => setIsEnquiryModalOpen(true)} // Open the modal
                         >
                             Get Quote
                         </button>
-                    </div>
+                    </div> */}
                 </div>
 
 
@@ -145,12 +161,30 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
                             <span>{(item.name)}</span>
                         </NavLink>
                     ))}
-                    <button
-                        className=" ml-auto bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
+
+                    <button className="ml-auto cursor-pointer relative group overflow-hidden border-2 px-4 py-2 border-[#E5B80B]"
+                        onClick={() => setIsEnquiryModalOpen(true)}
+                    >
+                        {/* Text content */}
+                        <span className="font-bold text-white text-sm relative z-10 group-hover:text-[#E5B80B] duration-500">
+                            Get Quote
+                        </span>
+
+                        {/* Background spans */}
+                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:-translate-x-full h-full"></span>
+                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:translate-x-full h-full"></span>
+
+                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
+                        <span className="absolute delay-300 top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:translate-y-full h-full"></span>
+                    </button>
+
+
+                    {/* <button
+                        className=" ml-auto bg-green-500 text-white px-4 py-2 hover:bg-green-600 transition duration-300"
                         onClick={() => setIsEnquiryModalOpen(true)} // Open the modal
                     >
                         Get Quote
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </nav>
