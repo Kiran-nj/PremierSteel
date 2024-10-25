@@ -1,28 +1,17 @@
 import React from 'react';
-import { projects } from '../utils/constants';
+import { productsList } from '../utils/constants';
 
-// const projects = [
-//     { title: 'MS Joints',category: 'Energy / Tools', imageSrc: '/src/assets/steelangles.jpg' },
-//     { title: 'MS Channels',category: 'Energy / Tools', imageSrc: '/src/assets/channel.jpg' },
-//     { title: 'MS Plates',category: 'Energy / Tools', imageSrc: '/src/assets/sheet.jpg' },
-//     { title: 'MS Angles',category: 'Energy / Tools', imageSrc: '/src/assets/angles.jpg' },
-//     { title: 'MS Flats',category: 'Energy / Tools', imageSrc: '/src/assets/steelangles.jpg' },
-//     { title: 'MS Rounds',category: 'Energy / Tools', imageSrc: '/src/assets/round.jpg' },
-//     { title: 'MS Squares',category: 'Energy / Tools', imageSrc: '/src/assets/squareandround.jpg' },
-//     { title: 'MS Chequered Plates',category: 'Energy / Tools', imageSrc: '/src/assets/sheet2.jpg' },
-//     { title: 'GP/MS Tubes & Pipes',category: 'Energy / Tools', imageSrc: '/src/assets/squareandround.jpg' },
-//   ];
 const ProjectGrid = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 px-4 py-8 bg-black">
-      {projects.map((project, index) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 px-4 py-8 bg-selBlack">
+      {productsList.map((project, index) => (
         <div
           key={index}
           className="relative group h-80 overflow-hidden shadow-lg"
           style={{ backgroundImage: `url(${project.imageSrc})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         >
           {/* Overlay on hover */}
-          <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-500"></div>
+          <div className="absolute inset-0 bg-selBlack bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-500"></div>
 
           {/* Text Content */}
           <div className="absolute inset-0 flex flex-col justify-end p-6">

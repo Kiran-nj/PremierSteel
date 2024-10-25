@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { teamMembers } from '../utils/constants';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FounderSection = () => {
+const AboutFounderSection = () => {
   const sectionRef = useRef(null);
   const timeline = useRef(null);
 
@@ -31,13 +32,6 @@ const FounderSection = () => {
         stagger: 0.3,
         ease: 'power3.out',
       })
-      .to(imageElements, {
-        opacity: 1,
-        scale: 1,
-        duration: 1.2,
-        stagger: 0.3,
-        ease: 'power2.out',
-      }, '-=1'); // Start slightly before the text animation ends
 
     // Cleanup function
     return () => {
@@ -47,30 +41,7 @@ const FounderSection = () => {
     };
   }, []);
 
-  const teamMembers = [
-    {
-      role: "Founder",
-      name: "Mr. V A Mohamed Ashraf",
-      description: [
-        "Premier steels is established in 1982 by V A Mohamed Ashraf (Achu).",
-        "Premier Steels started as a small business to become one of the most respected names in the Stainless Steel market.",
-        "With a huge stock ranging from S.S Pipes, Sheets, Angles, and various other products all available at competitive prices, we also assure an exceptional quality of our products.",
-        "We are also the authorised dealers of JNB Steels and as said above, quality is our first priority.",
-        "Another product worth mentioning is the Coloured, PVD Coated Stainless Steel Sheet, which is in popular demand for its visual appeal and various other advantages.",
-      ],
-      image: '/src/assets/founder.jpeg' // Image path for founder
-    },
-    {
-      role: "CEO",
-      name: "Mr. Zakir",
-      description: [
-        "Premier steels is established in 1982 by V A Mohamed Ashraf (Achu).",
-        "Premier Steels started as a small business to become one of the most respected names in the Stainless Steel market.",
-        "With a huge stock ranging from S.S Pipes, Sheets, Angles, and various other products all available at competitive prices, we also assure an exceptional quality of our products.",
-      ],
-      image: '/src/assets/founder.jpeg' // Image path for co-founder
-    }
-  ];
+
 
   return (
     <div ref={sectionRef} className="founder-section bg-blue-50 py-16 px-4 md:px-16 lg:px-32">
@@ -104,4 +75,4 @@ const FounderSection = () => {
   );
 };
 
-export default FounderSection;
+export default AboutFounderSection;

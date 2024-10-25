@@ -1,5 +1,6 @@
-import React from "react";
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import React from 'react';
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async'; // Import HelmetProvider
 import Layout from "./Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -17,16 +18,14 @@ function App() {
          <Route path="/blog" element={<Blog />} />
          <Route path="/contact" element={<Contacts />} />
          <Route path="/about" element={<About />} />
-         
       </Route>
-      //   {/* <Route path="*" element={<NotFoundPage />} /> */}
     )
   );
 
   return (
-    // <React.StrictMode>
+    <HelmetProvider>
       <RouterProvider router={router} />
-    // </React.StrictMode>
+    </HelmetProvider>
   );
 }
 

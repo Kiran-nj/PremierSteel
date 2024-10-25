@@ -43,11 +43,10 @@ const MiniAbout = () => {
   }, []);
 
   return (
-    <div className="bg-black py-16 px-6 md:px-20 overflow-hidden">
+    <div className="bg-selBlack py-16 px-6 md:px-20 overflow-hidden">
       <div className="flex flex-col md:flex-row items-center gap-10">
         {/* Text Section */}
         <div ref={textRef} className="md:w-1/2">
-          <h3 className="text-gray-600 font-semibold mb-2"></h3>
           <h1 className="text-2xl md:text-5xl font-bold text-borderColor2 mb-6">
             The essence of <span className='company-font-only text-5xl md:text-5xl text-red block md:inline'>Premier Steels</span>
           </h1>
@@ -55,7 +54,7 @@ const MiniAbout = () => {
             At Premier Steels, we believe in delivering brilliance in all that we offer.
           </p>
           <p className="text-borderColor2">
-            We don't just supply steel, we build solid partnerships and contribute to responsibly constructing the world’s infrastructure.
+            We don't just supply steel; we build solid partnerships and contribute to responsibly constructing the world’s infrastructure.
             Join us in our journey to not only meet the global demand for steel but to shape a more sustainable and resilient future.
           </p>
         </div>
@@ -63,12 +62,11 @@ const MiniAbout = () => {
         <div ref={imageRef} className="md:w-1/2 h-[60vh]">
           <img
             src="src/assets/abtimg2.jpg"
-            alt="Premier Steel Overview"
+            alt="Premier Steel Overview" // Updated alt text
             className="rounded-lg object-cover w-full h-full"
           />
         </div>
       </div>
-
     </div>
   );
 };

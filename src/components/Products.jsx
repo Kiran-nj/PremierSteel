@@ -55,7 +55,7 @@ const SteelProductsShowcase = () => {
       />
 
       {/* Product sections */}
-      <div className="relative w-full h-full flex flex-col md:flex-row bg-black/60">
+      <div className="relative w-full h-full flex flex-col md:flex-row bg-selBlack/60">
         {featuredProjects.map((product, index) => (
           <div
             key={product.id}

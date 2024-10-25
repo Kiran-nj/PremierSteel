@@ -24,6 +24,12 @@ body {
   /* font-family: 'Constantia', sans-serif; */
 }
 
+.custom-bg-gradient {
+  background: linear-gradient(to right, #101010 0%, #101010 70%, #9C2327 100%);
+}
+
+
+
 /* scrollbar css */
 body::-webkit-scrollbar {
   width: 5px;
@@ -91,4 +97,42 @@ body::-webkit-scrollbar-thumb {
   aspect-ratio: 4/3;
   object-fit: contain;
   /* mix-blend-mode: color-burn; */
+}
+/* HOME */
+
+
+.gas {
+  --blur: 1.75rem;
+  --box-blur: calc(0.5 * var(--blur));
+  --glow: var(--color);
+  
+  align-items: center;
+  border: 2px solid currentColor;
+  box-shadow: 
+    /* --- "glass" tube --- */
+    /* inside */ inset 0 0 0 2px rgba(0, 0, 0, 0.15),
+    /* outside */      0 0 0 2px rgba(0, 0, 0, 0.15),
+    /* --- glow --- */
+    /* inside */ inset 0 0 var(--box-blur) var(--glow),
+    /* outside */      0 0 var(--box-blur) var(--glow);
+  color: var(--color, white);
+  display: inline-flex;
+  flex-direction: column;
+  font-family: system-ui, sans-serif;
+  justify-content: space-around;
+  
+  > * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .symbol { 
+    /* font-size: 700;  */
+    font-family: 'Neon Glow';
+    text-shadow: 0 0 var(--blur) var(--glow);
+  }
+  
+  &.he { --color: #FCEAAC; filter: saturate(175%); }
+  &.kr { --color: #B7E7F7; filter: saturate(200%); }
+  &.xe { --color: #C4C4C6; filter: brightness(105%); }
 }

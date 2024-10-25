@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import EnquiryModal from './components/EnquiryModal';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import FloatingBtn from './components/FloatingBtn';
 
 const Layout = () => {
   const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false); // Modal visibility state
@@ -12,6 +13,7 @@ const Layout = () => {
 
   return (
     <div className="">
+      <FloatingBtn setIsEnquiryModalOpen={setIsEnquiryModalOpen} />
       <ToastContainer toastClassName="custom-toast" />
       <Navbar setIsEnquiryModalOpen={setIsEnquiryModalOpen} />
       <div>

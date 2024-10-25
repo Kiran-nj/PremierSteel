@@ -6,11 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        red: "#FF0000",
+        green: "#32de84", 
+        selRed: "#9C2327",
+        selBlack: "#101010",
         borderColor: "#ffffff59",
         borderColor2: "#ffffffce",
-        zinc: "#101010",
-        gray: "#555555"
+        zinc: "#232222",
+        gray: "#555555",
+        selWhite: "#F2F1EF",
       },
       boxShadow: {
         'text-black': '2px 2px 4px rgba(0, 0, 0, 0.8)',
