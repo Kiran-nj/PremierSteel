@@ -61,7 +61,7 @@ function Footer() {
               <h4 className="font-bold text-base mb-2">PRODUCTS</h4>
               <ul className="space-y-1 columns-2 text-sm md:text-base">
                 {productsList.map((prod, index) => (
-                  <li key={index} className='text-xs uppercase'>{prod.title}</li>
+                  <li key={index} className='text-xs md:text-sm uppercase'>{prod.title}</li>
                 ))}
               </ul>
             </div>
@@ -69,24 +69,24 @@ function Footer() {
             {/* Information */}
             <div>
               <h4 className="font-bold text-base mb-2">INFORMATION</h4>
-              <ul className="space-y-1 text-xs md:text-base">
-                <li>HOME</li>
-                <li>PRODUCTS</li>
-                <li>BLOG</li>
-                <li>ABOUT</li>
-                <li>CONTACT</li>
+              <ul className="space-y-1 text-xs md:text-sm">
+                <li >HOME</li>
+                <li >PRODUCTS</li>
+                <li >BLOG</li>
+                <li >ABOUT</li>
+                <li >CONTACT</li>
               </ul>
             </div>
 
             {/* Our Services */}
             <div>
               <h4 className="font-bold text-base mb-2">OUR SERVICES</h4>
-              <ul className="space-y-1 text-xs md:text-base">
-                <li>HOME</li>
-                <li>PRODUCTS</li>
-                <li>BLOG</li>
-                <li>ABOUT</li>
-                <li>CONTACT</li>
+              <ul className="space-y-1 text-xs md:text-sm">
+                <li >HOME</li>
+                <li >PRODUCTS</li>
+                <li >BLOG</li>
+                <li >ABOUT</li>
+                <li >CONTACT</li>
               </ul>
             </div>
           </div>

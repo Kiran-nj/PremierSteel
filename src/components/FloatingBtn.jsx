@@ -11,7 +11,7 @@ const FloatingBtn = ({ setIsEnquiryModalOpen }) => {
   };
 
   return (
-    <div className="fixed md:hidden inset-0 flex items-center z-50">
+    <div className="fixed md:hidden inset-0 flex items-center w-fit ml-auto z-50">
       {/* <button
         type='button'
         ref={buttonRef}
