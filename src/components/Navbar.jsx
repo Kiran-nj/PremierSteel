@@ -63,27 +63,27 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
 
 
     return (
-        <nav className={` fixed top-0 left-0 flex justify-center w-screen z-50 md:h-24 overflow-hidden bg-green-body/50 ${isScrolled ? 'bg-selBlack' : ''} transition-colors duration-1000`}>
+        <nav className={` fixed top-0 left-0 flex justify-center w-screen z-50 lg:h-24 overflow-hidden bg-green-body/50 ${isScrolled ? 'bg-selBlack' : ''} transition-colors duration-1000`}>
             <div
-                className={`w-full flex justify-between items-center max-w-screen-2xl px-4 ${isScrolled ? 'py-3 md:py-4' : 'py-4 md:py-7'
+                className={`w-full flex justify-between items-center max-w-screen-2xl px-4 ${isScrolled ? 'py-3 lg:py-4' : 'py-4 lg:py-7'
                     } transition-all duration-700 ease-in-out`}
             >
                 {/* Logo Section */}
                 <div className="flex items-center gap-1 text-center justify-center ">
                     <NavLink to={'/'} className=''>
-                        <div style={{ borderRadius: "50%" }} className='bg-selRed-400 overflow-hidden p-1 md:p-2'>
-                            <img src={companyLogo} alt="Company Logo" className={`w-5 h-5 md:w-10 md:h-7 transition-all duration-700 ease-in-out`} />
+                        <div style={{ borderRadius: "50%" }} className='bg-selRed-400 overflow-hidden p-1 lg:p-2'>
+                            <img src={companyLogo} alt="Company Logo" className={`w-5 h-5 lg:w-10 lg:h-7 transition-all duration-700 ease-in-out`} />
                         </div>
                     </NavLink>
                     <NavLink to={'/'} className="flex items-center justify-center text-center mt-1">
-                        <h1 className={`company-font text-white transition-all duration-700 ease-in-out font-semibold md:font-bold`}
+                        <h1 className={`company-font text-white transition-all duration-700 ease-in-out font-semibold lg:font-bold`}
                         >
                             Premier Steels
                         </h1>
                     </NavLink>
                 </div>
 
-                <div className='hidden md:flex justify-center items-center space-x-7'>
+                <div className='hidden lg:flex justify-center items-center space-x-7'>
                     <div className="px-5 py-2">
                         <ul className="flex w-full">
                             {moreList.map((item, index) => (
@@ -131,13 +131,13 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
 
 
 
-                <div className="flex md:hidden justify-center items-center gap-1 cursor-pointer z-50 text-center" onClick={() => setIsOpen(!isOpen)}>
+                <div className="flex lg:hidden justify-center items-center gap-1 cursor-pointer z-50 text-center" onClick={() => setIsOpen(!isOpen)}>
                     <button className={`menu__icon ${isOpen ? 'active' : ''}`}>
                         <span></span>
                         <span></span>
                         <span></span>
                     </button>
-                    <p className={`${isScrolled ? 'text-[.7rem] md:text-xs' : 'text-[.8rem] md:text-sm'} text-white transition-all duration-700 ease-in-out font-light`}>
+                    <p className={`${isScrolled ? 'text-[.7rem] lg:text-xs' : 'text-[.8rem] lg:text-sm'} text-white transition-all duration-700 ease-in-out font-light`}>
                         {isOpen ? 'CLOSE' : 'MENU'}
                     </p>
                 </div>
@@ -147,14 +147,14 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
 
             {/* mobile */}
             <div
-                className="backdrop-blur-3xl bg-green-body/60 fixed top-0 left-0 w-full md:w-[60vw] lg:w-[45vw] h-full transform -translate-x-full z-40 menu-container overflow-hidden"
+                className="backdrop-blur-3xl bg-green-body/60 fixed top-0 left-0 w-full lg:w-[60vw] lg:w-[45vw] h-full transform -translate-x-full z-40 menu-container overflow-hidden"
             >
-                <div className="text-red-500 hover:text-[#fff] font-normal flex flex-col justify-center items-center h-full space-y-4 mr-10 md:mr-0">
+                <div className="text-red-500 hover:text-[#fff] font-normal flex flex-col justify-center items-center h-full space-y-4 mr-10 lg:mr-0">
                     {moreList.map((item, index) => (
                         <NavLink
                             to={item.path}
                             key={index}
-                            className={({ isActive }) => `ml-auto text-lg md:text-xl flex items-center transition-colors duration-300 common-animation hover:font-bold ${isActive ? 'text-white font-bold' : 'text-gray-300'}`}
+                            className={({ isActive }) => `ml-auto text-lg lg:text-xl flex items-center transition-colors duration-300 common-animation hover:font-bold ${isActive ? 'text-white font-bold' : 'text-gray-300'}`}
                             ref={(el) => (commonRef.current[index] = el)}
                             onClick={() => setIsOpen(!isOpen)}
                         >

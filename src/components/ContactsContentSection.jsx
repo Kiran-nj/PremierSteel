@@ -26,13 +26,13 @@ const ContactsContentSection = () => {
 
                         <div className="grid gap-4 md:gap-6 md:grid-cols-3 lg:grid-cols-3 w-full px-5 md:px-0">
                             <div className="order-2 md:order-1">
-                                <ContactCard icon={<IoCall />} title="Call Us" text={`+91 ${companyPhoneNo}`} />
+                                <ContactCard icon={<IoCall />} title="Call Us" text={`+91 ${companyPhoneNo}`} onClick={() => window.location.href = `https://wa.me/91${companyPhoneNo}`} />
                             </div>
                             <div className="order-1 md:order-2">
-                                <ContactCard icon={<MdLocationOn />} title="Address" text={`Premier Steels\nStock Yard, Pullepady Road\nErnakulam, PIN: 628017`} />
+                                <ContactCard icon={<MdLocationOn />} title="Address" text={`Premier Steels\nStock Yard, Pullepady Road\nErnakulam, PIN: 628017`} onClick={() => window.open("https://maps.app.goo.gl/NsLitg5Y48vRQHf46", "_blank")} />
                             </div>
                             <div className="order-3 md:order-3">
-                                <ContactCard icon={<MdEmail />} title="Email Us" text={companyEmail} />
+                                <ContactCard icon={<MdEmail />} title="Email Us" text={companyEmail} onClick={() => window.location.href = `mailto:${companyEmail}`}  />
                             </div>
                         </div>
                     </div>
@@ -87,8 +87,11 @@ const ContactsContentSection = () => {
     )
 }
 
-const ContactCard = ({ icon, title, text }) => (
-    <button className="flex flex-col items-center text-center gap-3 md:gap-5 p-4 w-full">
+const ContactCard = ({ icon, title, text, onClick }) => (
+    <button 
+        className="flex flex-col items-center text-center gap-3 md:gap-5 p-4 w-full" 
+        onClick={onClick}
+    >
         {/* Icon with circular border, centered */}
         <div className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-selRed text-selRed">
             {icon}

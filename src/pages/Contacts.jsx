@@ -11,7 +11,7 @@ const Contacts = () => {
   const contentRef = useRef(null);
 
   useEffect(() => {
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
