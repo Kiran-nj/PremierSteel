@@ -6,7 +6,7 @@ const Blogs = () => {
 
 
   return (
-    <div className="bg-selBlack text-white py-8 px-4 sm:px-6 lg:px-8">
+    <div className=" text-white py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <p className="text-center  mb-12">
           Discover comprehensive information on steel production, grades, and applications in various industries.

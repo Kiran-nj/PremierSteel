@@ -3,7 +3,7 @@ import { productsList } from '../utils/constants';
 
 const ProjectGrid = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 px-4 py-8 bg-selBlack">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 px-4 py-8">
       {productsList.map((project, index) => (
         <div
           key={index}
@@ -11,7 +11,7 @@ const ProjectGrid = () => {
           style={{ backgroundImage: `url(${project.imageSrc})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         >
           {/* Overlay on hover */}
-          <div className="absolute inset-0 bg-selBlack bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-500"></div>
+          <div className="absolute inset-0 bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-500"></div>
 
           {/* Text Content */}
           <div className="absolute inset-0 flex flex-col justify-end p-6">

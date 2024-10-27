@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet-async';
 function Home() {
   useEffect(() => {
     // Scroll to top when the component mounts
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
 
     // Save current scroll position before leaving
     return () => {
@@ -16,7 +16,7 @@ function Home() {
     };
   }, []);
   return (
-    <div className='bg-selBlack'>
+    <div className=''>
       <Helmet>
         <title>Premier Steels</title>
         <meta name="description" content="Explore Premier Steels' quality products, strategic partnerships, and commitment to excellence in steel manufacturing." />

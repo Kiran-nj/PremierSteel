@@ -13,13 +13,14 @@ import rounds from '../assets/round.jpg';
 import squareAndRound from '../assets/squareandround.jpg';
 import sheet2 from '../assets/sheet2.jpg';
 import founderImg from '../assets/founder.jpeg';
+import backgroundImg from '../assets/images/footer_bg.jpeg';
 
-export const moreList = [
-    { name: 'Home', path: '/' },
-    { name: 'Products', path: '/products' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
+export const navLists = [
+  { name: 'Home', path: '/', order: 1 },
+  { name: 'Products', path: '/products', order: 2 },
+  { name: 'Blog', path: '/blog', order: 3 },
+  { name: 'About', path: '/about', order: 4 },
+  { name: 'Contact', path: '/contact', order: 5 },
 ];
 
 export const partners = [
@@ -124,3 +125,4 @@ For these reasons, as well as the metal's combination of high strength and a rel
 
 export const companyPhoneNo = '8589043416'
 export const companyEmail = 'premiersteels0020@gmail.com'
+export const bgImg = backgroundImg;

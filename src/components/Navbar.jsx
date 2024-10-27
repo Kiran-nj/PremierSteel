@@ -1,18 +1,36 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-// import companyLogo from '../assets/images/company_logo.jpg'; // Update the path to your image
+import { FiMenu, FiX } from 'react-icons/fi';
 import companyLogo from '../assets/images/company_logo_bg.png'; // Update the path to your image
-import '../assets/css/hamburger.css'
-import { moreList } from '../utils/constants';
 
-const Navbar = ({ setIsEnquiryModalOpen }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const commonRef = useRef([]);
+export const navLists = [
+    { name: 'Home', path: '/', order: 1 },
+    { name: 'Products', path: '/products', order: 2 },
+    { name: 'Blog', path: '/blog', order: 3 },
+    { name: 'About', path: '/about', order: 4 },
+    { name: 'Contact', path: '/contact', order: 5 },
+];
+
+const Navbar = ({setIsEnquiryModalOpen}) => {
+    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
     const handleScroll = () => {
-        if (window.scrollY > 50) {
+        const currentScrollY = window.scrollY;
+
+        // Show/Hide navbar on scroll
+        if (currentScrollY > lastScrollY) {
+            setIsNavbarVisible(false); // Scrolling down
+        } else {
+            setIsNavbarVisible(true); // Scrolling up
+        }
+
+        setLastScrollY(currentScrollY);
+
+        // Change navbar background on scroll
+        if (currentScrollY > 50) {
             setIsScrolled(true);
         } else {
             setIsScrolled(false);
@@ -24,169 +42,112 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
-
-
-    useEffect(() => {
-        if (isOpen) {
-            gsap.fromTo(
-                '.common-animation', // Target all elements with this class
-                { x: -400, opacity: 0 }, // Alternate entrance direction
-                {
-                    x: 0,
-                    opacity: 1,
-                    duration: 1.2, // Slower animation duration
-                    ease: 'expo.out',
-                    stagger: 0.2, // Slightly increased stagger delay
-                }
-            );
-
-            gsap.to('.menu-container', {
-                x: 0,
-                duration: 1.2, // Slower animation duration
-                ease: 'expo.out',
-            });
-        } else {
-            gsap.to('.menu-container', {
-                x: '-100%',
-                duration: 1.4, // Slower animation duration
-                ease: 'expo.in',
-            });
-            gsap.to('.common-animation', {
-                x: -300,
-                duration: 1, // Slower animation duration
-                stagger: 0.2,
-                ease: 'expo.in',
-            });
-        }
-    }, [isOpen]);
-
+    }, [lastScrollY]);
 
     return (
-        <nav className={` fixed top-0 left-0 flex justify-center w-screen z-50 lg:h-24 overflow-hidden bg-green-body/50 ${isScrolled ? 'bg-selBlack' : ''} transition-colors duration-1000`}>
-            <div
-                className={`w-full flex justify-between items-center max-w-screen-2xl px-4 ${isScrolled ? 'py-3 lg:py-4' : 'py-4 lg:py-7'
-                    } transition-all duration-700 ease-in-out`}
-            >
-                {/* Logo Section */}
-                <div className="flex items-center gap-1 text-center justify-center ">
-                    <NavLink to={'/'} className=''>
-                        <div style={{ borderRadius: "50%" }} className='bg-selRed-400 overflow-hidden p-1 lg:p-2'>
-                            <img src={companyLogo} alt="Company Logo" className={`w-5 h-5 lg:w-10 lg:h-7 transition-all duration-700 ease-in-out`} />
-                        </div>
-                    </NavLink>
-                    <NavLink to={'/'} className="flex items-center justify-center text-center mt-1">
-                        <h1 className={`company-font text-white transition-all duration-700 ease-in-out font-semibold lg:font-bold`}
-                        >
-                            Premier Steels
-                        </h1>
-                    </NavLink>
-                </div>
-
-                <div className='hidden lg:flex justify-center items-center space-x-7'>
-                    <div className="px-5 py-2">
-                        <ul className="flex w-full">
-                            {moreList.map((item, index) => (
-                                <li key={index} className="flex-grow flex items-center justify-center uppercase">
-                                    <NavLink
-                                        to={item.path}
-                                        className={({ isActive }) => ` hover:text-selRed transition duration-300 px-6 py-1 rounded block text-center ${isActive ? 'text-selRed font-bold' : 'text-white '}`}
-                                    // className="text-white hover:bg-gray-700 hover:text-green-300 transition duration-300 px-10 py-1 rounded block text-center"
-                                    >
-                                        {item.name}
-                                    </NavLink>
-                                    {index < moreList.length - 1 && (
-                                        <div className="h-[20px] w-[1px] bg-borderColor ml-4"></div> // Separate div for the right border
-                                    )}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    {/* "Get Quote" Button */}
-                    <button style={{ boxShadow: '0 0 5px #E5B80B' }} className="cursor-pointer relative group overflow-hidden border-2 px-4 py-2 border-[#E5B80B]"
-                        onClick={() => setIsEnquiryModalOpen(true)}
-                    >
-                        {/* Text content */}
-                        <span className="font-bold text-white text-xl relative z-10 group-hover:text-[#E5B80B] duration-500">
-                            Get Quote
-                        </span>
-
-                        {/* Background spans */}
-                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:-translate-x-full h-full"></span>
-                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:translate-x-full h-full"></span>
-
-                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
-                        <span className="absolute delay-300 top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:translate-y-full h-full"></span>
-                    </button>
-
-                    {/* <div className="text-right">
-                        <button
-                            className=" bg-[#00FFFF] text-black px-4 py-2 hover:bg-green-600 transition duration-300"
-                            onClick={() => setIsEnquiryModalOpen(true)} // Open the modal
-                        >
-                            Get Quote
-                        </button>
-                    </div> */}
-                </div>
-
-
-
-                <div className="flex lg:hidden justify-center items-center gap-1 cursor-pointer z-50 text-center" onClick={() => setIsOpen(!isOpen)}>
-                    <button className={`menu__icon ${isOpen ? 'active' : ''}`}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <p className={`${isScrolled ? 'text-[.7rem] lg:text-xs' : 'text-[.8rem] lg:text-sm'} text-white transition-all duration-700 ease-in-out font-light`}>
-                        {isOpen ? 'CLOSE' : 'MENU'}
-                    </p>
-                </div>
-            </div>
-
-
-
-            {/* mobile */}
-            <div
-                className="backdrop-blur-3xl bg-green-body/60 fixed top-0 left-0 w-full lg:w-[60vw] lg:w-[45vw] h-full transform -translate-x-full z-40 menu-container overflow-hidden"
-            >
-                <div className="text-red-500 hover:text-[#fff] font-normal flex flex-col justify-center items-center h-full space-y-4 mr-10 lg:mr-0">
-                    {moreList.map((item, index) => (
-                        <NavLink
-                            to={item.path}
-                            key={index}
-                            className={({ isActive }) => `ml-auto text-lg lg:text-xl flex items-center transition-colors duration-300 common-animation hover:font-bold ${isActive ? 'text-white font-bold' : 'text-gray-300'}`}
-                            ref={(el) => (commonRef.current[index] = el)}
-                            onClick={() => setIsOpen(!isOpen)}
-                        >
-                            <span>{(item.name)}</span>
+        <nav className={`fixed top-0 left-0 w-full transition-all duration-1000 ease-in-out z-50 ${isScrolled ? 'bg-selBlack' : 'bg-transparent'} ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className={`flex ${isScrolled ? 'h-12 md:h-24' : 'h-16 md:h-24'} items-center justify-between transition-all duration-1000`}>
+                    {/* <div className="flex h-20 md:h-24 items-center justify-between"> */}
+                    {/* Logo and Company Name */}
+                    <div className="flex items-center gap-1 text-center justify-center">
+                        <NavLink to="/">
+                            <div style={{ borderRadius: "50%" }} className="overflow-hidden p-1 lg:p-2">
+                                <img src={companyLogo} alt="Company Logo" className="w-5 h-5 lg:w-10 lg:h-7 transition-all duration-700 ease-in-out" />
+                            </div>
                         </NavLink>
-                    ))}
+                        <NavLink to="/" className="flex items-center justify-center text-center mt-1">
+                            <h1 className="company-font text-white transition-all duration-700 ease-in-out font-semibold lg:font-bold">
+                                Premier Steels
+                            </h1>
+                        </NavLink>
+                    </div>
 
-                    <button className="ml-auto cursor-pointer relative group overflow-hidden border-2 px-4 py-2 border-[#E5B80B]"
+                    {/* Desktop Navigation Links */}
+                    <div className="hidden lg:flex space-x-4 justify-center items-center uppercase">
+                        {navLists.map((item, index) => (
+                            <React.Fragment key={item.order}>
+                                <NavLink
+                                    to={item.path}
+                                    className={({ isActive }) =>
+                                        `hover:text-selRed transition duration-300 px-3 py-2 rounded-md text-base ${isActive ? 'text-selRed font-bold' : 'text-white '}
+          }`
+                                    }
+                                >
+                                    {item.name}
+                                </NavLink>
+                                {index < navLists.length - 1 && (
+                                    <div className="h-[20px] w-[1px] bg-borderColor ml-4"></div>
+                                )}
+                            </React.Fragment>
+                        ))}
+                    </div>
+
+
+                    {/* Quote Button (Desktop Only) */}
+                    <button
+                        className="quote-btn px-4 py-1 rounded-full text-sm md:text-lg hidden lg:block"
                         onClick={() => setIsEnquiryModalOpen(true)}
-                    >
-                        {/* Text content */}
-                        <span className="font-bold text-white text-sm relative z-10 group-hover:text-[#E5B80B] duration-500">
-                            Get Quote
-                        </span>
-
-                        {/* Background spans */}
-                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:-translate-x-full h-full"></span>
-                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:translate-x-full h-full"></span>
-
-                        <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
-                        <span className="absolute delay-300 top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:translate-y-full h-full"></span>
-                    </button>
-
-
-                    {/* <button
-                        className=" ml-auto bg-green-500 text-white px-4 py-2 hover:bg-green-600 transition duration-300"
-                        onClick={() => setIsEnquiryModalOpen(true)} // Open the modal
                     >
                         Get Quote
-                    </button> */}
+                    </button>
+
+                    {/* Mobile Menu Button */}
+                    <div className="lg:hidden flex items-center">
+                        <button
+                            onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+                            className="text-white p-2 rounded-md focus:outline-none"
+                            aria-controls="mobile-menu"
+                            aria-expanded={isMobileMenuOpen}
+                        >
+                            {isMobileMenuOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
+                        </button>
+                    </div>
                 </div>
             </div>
+
+            {/* Mobile Menu */}
+            <div
+                className={`rounded-b-lg absolute top-full left-0 w-full transition-all duration-1000 ease-in-out transform ${isMobileMenuOpen ? 'max-h-screen' : 'max-h-0'
+                    } overflow-hidden ${isScrolled ? 'bg-selBlack' : 'bg-transparent'} lg:hidden uppercase`}
+                id="mobile-menu"
+            >
+                <div className="space-y-3 px-2 pb-3 flex flex-col justify-center items-center">
+                    {navLists.map((item) => (
+                        <NavLink
+                            key={item.order}
+                            to={item.path}
+                            className={({ isActive }) =>
+                                `block px-3 py-2 rounded-md text-base ${isActive ? 'text-selRed font-bold' : 'text-white '}
+                }`
+                            }
+                            onClick={() => setMobileMenuOpen(false)} // Close menu on nav link click
+                        >
+                            {item.name}
+                        </NavLink>
+                    ))}
+                    <button
+                        className="quote-btn px-4 py-1 rounded-full text-sm animate-pulse"
+                        onClick={() => setIsEnquiryModalOpen(true)}
+                    >
+                        Get Quote
+                    </button>
+                </div>
+            </div>
+
+            {/* Modal for Quote */}
+                <div className="hidden inset-0 items-center justify-center bg-black bg-opacity-50 z-50">
+                    <div className="bg-white p-4 rounded-lg shadow-lg">
+                        <h2 className="text-xl font-semibold mb-2">Request a Quote</h2>
+                        {/* Your enquiry modal content goes here */}
+                        <button
+                            onClick={() => setIsEnquiryModalOpen(false)}
+                            className="mt-4 px-4 py-2 bg-red-500 text-white rounded-full"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
         </nav>
     );
 };

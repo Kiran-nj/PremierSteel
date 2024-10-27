@@ -14,7 +14,7 @@ const Blog = () => {
     };
   }, []);
   return (
-    <div className='bg-selBlack'>
+    <div className=''>
       <Helmet>
         <title>Blog | Premier Steels</title>
         <meta

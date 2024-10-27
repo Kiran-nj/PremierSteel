@@ -116,7 +116,7 @@ const EnquiryModal = ({ isEnquiryModalOpen, setIsEnquiryModalOpen }) => {
                         </div>
 
                         <div
-                            className="relative w-full lg:w-1/2 h-full transform bg-white/50 text-left shadow-xl transition-all"
+                            className="relative w-full md:w-1/2 h-full transform bg-white/50 text-left shadow-xl transition-all"
                             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
                             role="dialog"
                         >
