@@ -19,4 +19,4 @@ if (development) {
 
 export const { BASE_URL, BASE_IMAGE_URL } = urls;
 
-export const POST_ENQUIRY_FORM = 'https://script.google.com/macros/s/AKfycbxMmJ0V3ruUw2-1MyT5GHGMxRP3PWpoNG88zeJqgACrktr0y0umh7ou3PJIET1sS_gsYg/exec';
+export const POST_ENQUIRY_FORM = 'https://script.google.com/macros/s/AKfycbyAQ04smCYj90yuDeyx-6AQQVLgQC9i1_ljnXFrH9EvuP8luAGcPVwEF3LP6XtGNDZ2Mg/exec';
