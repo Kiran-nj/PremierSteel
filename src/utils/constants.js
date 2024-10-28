@@ -14,6 +14,7 @@ import squareAndRound from '../assets/squareandround.jpg';
 import sheet2 from '../assets/sheet2.jpg';
 import founderImg from '../assets/founder.jpeg';
 import backgroundImg from '../assets/images/footer_bg.jpeg';
+import Logo from '../assets/images/company_logo_bg.png'; // Update the path to your image
 
 export const navLists = [
   { name: 'Home', path: '/', order: 1 },
@@ -126,3 +127,4 @@ For these reasons, as well as the metal's combination of high strength and a rel
 export const companyPhoneNo = '8589043416'
 export const companyEmail = 'premiersteels0020@gmail.com'
 export const bgImg = backgroundImg;
+export const companyLogo = Logo;

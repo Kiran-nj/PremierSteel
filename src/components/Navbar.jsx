@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
-import companyLogo from '../assets/images/company_logo_bg.png'; // Update the path to your image
+import { companyLogo } from '../utils/constants';
 
 export const navLists = [
     { name: 'Home', path: '/', order: 1 },
@@ -16,15 +16,18 @@ const Navbar = ({setIsEnquiryModalOpen}) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+    const scrollThreshold = 50; // Set a scroll threshold to minimize accidental hiding
 
     const handleScroll = () => {
         const currentScrollY = window.scrollY;
 
-        // Show/Hide navbar on scroll
-        if (currentScrollY > lastScrollY) {
-            setIsNavbarVisible(false); // Scrolling down
-        } else {
-            setIsNavbarVisible(true); // Scrolling up
+        // Only hide/show navbar based on scroll distance
+        if (Math.abs(currentScrollY - lastScrollY) > scrollThreshold) {
+            if (currentScrollY > lastScrollY) {
+                setIsNavbarVisible(false); // Scrolling down
+            } else {
+                setIsNavbarVisible(true); // Scrolling up
+            }
         }
 
         setLastScrollY(currentScrollY);
@@ -37,15 +40,39 @@ const Navbar = ({setIsEnquiryModalOpen}) => {
         }
     };
 
+    // Debounce function
+    const debounce = (func, delay) => {
+        let timeoutId;
+        return (...args) => {
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+            timeoutId = setTimeout(() => {
+                func.apply(null, args);
+            }, delay);
+        };
+    };
+
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
+        // Create a debounced version of the handleScroll function
+        const handleScrollDebounced = debounce(handleScroll, 100);
+        window.addEventListener('scroll', handleScrollDebounced);
+        
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScrollDebounced);
         };
     }, [lastScrollY]);
+    
 
     return (
-        <nav className={`fixed top-0 left-0 w-full transition-all duration-1000 ease-in-out z-50 ${isScrolled ? 'bg-selBlack' : 'bg-transparent'} ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+        <nav
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out
+            ${isScrolled ? 'bg-selBlack' : 'bg-transparent'} // Solid black when scrolled down, transparent at the top
+            ${isMobileMenuOpen & !isScrolled ? 'bg-red-950/30' : ''} // Red background when mobile menu is open
+            ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'} // Translate based on visibility
+        `}
+    >
+    
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className={`flex ${isScrolled ? 'h-12 md:h-24' : 'h-16 md:h-24'} items-center justify-between transition-all duration-1000`}>
                     {/* <div className="flex h-20 md:h-24 items-center justify-between"> */}
@@ -109,16 +136,16 @@ const Navbar = ({setIsEnquiryModalOpen}) => {
             {/* Mobile Menu */}
             <div
                 className={`rounded-b-lg absolute top-full left-0 w-full transition-all duration-1000 ease-in-out transform ${isMobileMenuOpen ? 'max-h-screen' : 'max-h-0'
-                    } overflow-hidden ${isScrolled ? 'bg-selBlack' : 'bg-transparent'} lg:hidden uppercase`}
+                    } overflow-hidden ${isScrolled ? 'bg-selBlack' : 'bg-red-950/30 '} lg:hidden uppercase`}
                 id="mobile-menu"
             >
-                <div className="space-y-3 px-2 pb-3 flex flex-col justify-center items-center">
+                <div className="space-y-1 px-2 pb-3 flex flex-col justify-center items-start">
                     {navLists.map((item) => (
                         <NavLink
                             key={item.order}
                             to={item.path}
                             className={({ isActive }) =>
-                                `block px-3 py-2 rounded-md text-base ${isActive ? 'text-selRed font-bold' : 'text-white '}
+                                `block px-3 py-2 rounded-md text-sm ${isActive ? 'text-white font-extrabold' : 'text-white font-extralight '}
                 }`
                             }
                             onClick={() => setMobileMenuOpen(false)} // Close menu on nav link click
@@ -127,7 +154,7 @@ const Navbar = ({setIsEnquiryModalOpen}) => {
                         </NavLink>
                     ))}
                     <button
-                        className="quote-btn px-4 py-1 rounded-full text-sm animate-pulse"
+                        className="ml-4 quote-btn px-4 py-1 rounded-sm text-sm animate-pulse uppercase"
                         onClick={() => setIsEnquiryModalOpen(true)}
                     >
                         Get Quote
