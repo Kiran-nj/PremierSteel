@@ -1,39 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { BsWhatsapp } from 'react-icons/bs';
-import { companyPhoneNo } from '../utils/constants';
-import { RiWhatsappFill } from 'react-icons/ri';
 import { MdOutlineWhatsapp } from 'react-icons/md';
+import { companyPhoneNo } from '../utils/constants';
 
 const FloatingBtn = () => {
-  const [showTooltip, setShowTooltip] = useState(true);
-
-  useEffect(() => {
-    // Hide the tooltip after 5 seconds
-    const timer = setTimeout(() => setShowTooltip(false), 5000);
-
-    // Cleanup the timer when the component unmounts
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <div className="fixed bottom-7 md:bottom-10 right-1 md:right-4 z-50 flex flex-col items-end">
-      {/* Comic-Style Tooltip */}
-      {showTooltip && (
-        <div className="relative bg-selWhite text-selBlack text-xs md:text-sm p-2 rounded-md mb-1 speech-bubble animate-bounce">
-          Chat with us
-          <div className="speech-bubble-tail absolute top-full right-6"></div>
-        </div>
-      )}
-      {/* WhatsApp Button */}
-      <a
-        
-        style={{ background: "linear-gradient(to right, #fbdea2, #AD9515)" }}
-        href={`https://wa.me/+91${companyPhoneNo}`} // Replace with your WhatsApp number
+    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+      
+        <a href={`https://wa.me/+91${companyPhoneNo}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-[#c19130] p-2 rounded-full transition-transform transform hover:scale-110 focus:outline-none animate-pulse"
+        className="flex items-center gap-2 px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform"
+        style={{ 
+        /*   background: "linear-gradient(to right, #fbdea2, #AD9515)", */
+        background: "linear-gradient(to right, #25D366, #075E54)",
+
+        }}
       >
-        <MdOutlineWhatsapp className="text-selWhite  text-4xl md:text-5xl " />
+        <MdOutlineWhatsapp className="text-white text-2xl" />
+        <span className="text-white font-medium">Leave a message</span>
       </a>
     </div>
   );

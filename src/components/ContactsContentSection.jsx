@@ -59,12 +59,12 @@ const ContactsContentSection = () => {
                         </div>
                         <textarea placeholder="Your Message" className="p-2 bg-gray-200 text-black focus:outline-none w-full placeholder:text-xs md:placeholder:text-base" rows="4" />
                         <div className='flex justify-end'>
-                            <button type="submit" className="relative group overflow-hidden border-2 px-4 py-2 border-[#E5B80B] w-full">
-                                <span className="font-bold text-white text-sm relative z-10 group-hover:text-[#E5B80B] duration-500">Send Message</span>
-                                <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:-translate-x-full h-full"></span>
-                                <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:translate-x-full h-full"></span>
-                                <span className="absolute top-0 left-0 w-full bg-[#E5B80B] duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
-                                <span className="absolute delay-300 top-0 left-0 w-full bg-[#E5B80B] duration-500 group-hover:translate-y-full h-full"></span>
+                            <button type="submit" className="relative group overflow-hidden border-2 px-4 py-2 border-selRed w-full">
+                                <span className="font-bold text-white text-sm relative z-10 group-hover:text-selRed duration-500">Send Message</span>
+                                <span className="absolute top-0 left-0 w-full bg-selRed duration-500 group-hover:-translate-x-full h-full"></span>
+                                <span className="absolute top-0 left-0 w-full bg-selRed duration-500 group-hover:translate-x-full h-full"></span>
+                                <span className="absolute top-0 left-0 w-full bg-selRed duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
+                                <span className="absolute delay-300 top-0 left-0 w-full bg-selRed duration-500 group-hover:translate-y-full h-full"></span>
                             </button>
                         </div>
                     </form>

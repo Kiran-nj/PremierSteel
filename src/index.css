@@ -39,6 +39,10 @@ body {
   background: linear-gradient(to right, #101010 0%, #101010 70%, #9C2327 100%);
 }
 
+.text-shadow-black {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Adjust values as needed */
+}
+
 
 
 /* scrollbar css */
