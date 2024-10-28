@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { companyLogo } from '../utils/constants';
@@ -17,6 +17,7 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isNavbarVisible, setIsNavbarVisible] = useState(true);
     const scrollThreshold = 50;
+    const menuRef = useRef(null);
 
     const handleScroll = () => {
         const currentScrollY = window.scrollY;
@@ -47,11 +48,29 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
         };
     }, [lastScrollY]);
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setMobileMenuOpen(false);
+            }
+        };
+
+        if (isMobileMenuOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isMobileMenuOpen]);
+
     return (
         <nav
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out
                 ${isScrolled ? 'bg-black' : 'bg-transparent'}
-                ${isMobileMenuOpen && !isScrolled ? 'bg-selRed/30 backdrop-blur-3xl' : ''}
+                ${isMobileMenuOpen && !isScrolled ? 'bg-selRed/30 backdrop-blur-sm' : ''}
                 ${isMobileMenuOpen && isScrolled ? 'bg-black' : ''}
     ${isNavbarVisible || isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'}            
 `}
@@ -120,7 +139,9 @@ const Navbar = ({ setIsEnquiryModalOpen }) => {
                     overflow-hidden ${isScrolled ? 'bg-black' : 'bg-selRed/30 backdrop-blur-3xl'} lg:hidden uppercase`}
                 id="mobile-menu"
             >
-                <div className="px-2 pb-3 flex flex-col justify-center items-start">
+                <div
+                    ref={menuRef}
+                    className="px-2 pb-3 flex flex-col justify-center items-start">
                     {navLists.map((item) => (
                         <NavLink
                             key={item.order}
