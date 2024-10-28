@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { yearsCompleted } from '../utils/constants';
+import steel5 from '../../src/assets/images/footer_bg.jpeg'; // Background image
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,31 +46,39 @@ const MiniAbout = () => {
 
   return (
     <div
-     className="py-16 px-6 md:px-20 overflow-hidden">
-      <div className="flex flex-col md:flex-row items-center gap-10">
-        {/* Text Section */}
-        <div ref={textRef} className="md:w-1/2">
-          <h1 className="text-2xl md:text-5xl font-bold text-borderColor2 mb-6">
-            The essence of <span className='company-font-only text-5xl md:text-5xl text-red block md:inline'>Premier Steels</span>
-          </h1>
-          <p className="text-borderColor2 mb-4">
-            At Premier Steels, we believe in delivering brilliance in all that we offer.
-          </p>
-          <p className="text-borderColor2">
-            We don't just supply steel; we build solid partnerships and contribute to responsibly constructing the world’s infrastructure.
-            Join us in our journey to not only meet the global demand for steel but to shape a more sustainable and resilient future.
-          </p>
-        </div>
-        {/* Image Section */}
-        <div ref={imageRef} className="md:w-1/2 h-[60vh]">
-          <img
-            src="src/assets/abtimg2.jpg"
-            alt="Premier Steel Overview" // Updated alt text
-            className="rounded-lg object-cover w-full h-full"
-          />
-        </div>
-      </div>
+  className="relative py-7 px-6 md:px-20 overflow-hidden text-black pt-12"
+>
+  <div
+    className="absolute inset-0 bg-cover bg-center filter blur-md"
+    style={{
+      backgroundImage: `url(${steel5})`,
+      zIndex: 1,
+    }}
+  ></div>
+  
+  <div className="bg-white bg-opacity-90 flex flex-col md:flex-row items-center gap-10 border md:p-10 rounded-2xl relative z-10">
+    <div ref={imageRef} className="w-full md:w-1/2 h-[30vh] sm:h-[30vh] md:h-[38vh] flex justify-center items-center">
+      <img
+        src={yearsCompleted}
+        alt="Premier Steel Overview"
+        className="rounded-lg object-contain w-full md:w-[50%] h-full md:h-[90%]"
+      />
     </div>
+    
+    <div ref={textRef} className="md:w-1/2 pl-3 md:pl-0 pb-3 md:pb-0">
+      <h1 className="text-2xl md:text-4xl font-thin text-black mb-6 text-start">
+        WELCOME TO <span className='company-font-only text-5xl md:text-5xl text-selRed block md:inline'>Premier Steels</span>
+      </h1>
+      <p className="mb-4 uppercase md:text-start">
+        Your trusted partner in steel supply for over <strong className='font-extrabold text-selRed'>42 years</strong>.
+      </p>
+      <p className="uppercase md:text-start text-xs md:text-base">
+        With a solid reputation built on quality and reliability, we offer a comprehensive range of steel products sourced from various industry leaders. Our commitment to excellence drives us to deliver not just materials, but also innovative solutions tailored to meet the diverse needs of our clients across various sectors. At Premier Steels, we pride ourselves on our exceptional customer service, technical expertise, and timely delivery, ensuring your projects run smoothly from start to finish. Join us in building a stronger future with <strong className='font-semibold'>Premier Steels</strong>.
+      </p>
+    </div>
+  </div>
+</div>
+
   );
 };
 

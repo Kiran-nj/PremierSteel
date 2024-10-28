@@ -44,7 +44,7 @@ const SteelProductsShowcase = () => {
 
   return (
     <div className="h-auto md:h-screen flex flex-col">
-      <div className='h-fit text-selWhite  text-xl md:text-5xl py-5 md:py-10 uppercase font-extralight md:font-thin text-start md:text-center bg-black'>
+      <div className='h-fit text-selWhite  text-xl md:text-5xl pl-2 md:pl-0 py-5 md:py-10 uppercase font-extralight md:font-thin text-start md:text-center bg-black'>
         <h2 className="">featured <span className='text-selRed'>Products</span></h2>
       </div>
       <div className="relative w-full flex-grow overflow-hidden">
@@ -74,7 +74,7 @@ const SteelProductsShowcase = () => {
 
               {/* Product info */}
               <div className="product-info w-full bg-gray/50 md:bg-transparent group-hover:bg-gray/60 px-2 absolute bottom-0 inset-x-0 flex flex-col items-start justify-start gap-1 py-2 md:py-4">
-                <span className="text-white text-xl sm:text-2xl md:text-2xl lg:text-4xl font-bold drop-shadow-md">
+                <span className="text-white text-xl sm:text-2xl md:text-2xl lg:text-3xl font-thin drop-shadow-md">
                   {product.name}
                 </span>
               </div>

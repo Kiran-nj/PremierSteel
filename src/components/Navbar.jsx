@@ -11,7 +11,7 @@ export const navLists = [
     { name: 'Contact', path: '/contact', order: 5 },
 ];
 
-const Navbar = ({setIsEnquiryModalOpen}) => {
+const Navbar = ({ setIsEnquiryModalOpen }) => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -57,22 +57,22 @@ const Navbar = ({setIsEnquiryModalOpen}) => {
         // Create a debounced version of the handleScroll function
         const handleScrollDebounced = debounce(handleScroll, 100);
         window.addEventListener('scroll', handleScrollDebounced);
-        
+
         return () => {
             window.removeEventListener('scroll', handleScrollDebounced);
         };
     }, [lastScrollY]);
-    
+
 
     return (
         <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out
-            ${isScrolled ? 'bg-selBlack' : 'bg-transparent'} // Solid black when scrolled down, transparent at the top
-            ${isMobileMenuOpen & !isScrolled ? 'bg-red-950/30' : ''} // Red background when mobile menu is open
-            ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'} // Translate based on visibility
-        `}
-    >
-    
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out
+                ${isScrolled ? 'bg-selBlack' : 'bg-transparent'}
+                ${isMobileMenuOpen && isScrolled ? '' : 'bg-red-950/30'}
+                ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}
+            `}
+        >
+
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className={`flex ${isScrolled ? 'h-12 md:h-24' : 'h-16 md:h-24'} items-center justify-between transition-all duration-1000`}>
                     {/* <div className="flex h-20 md:h-24 items-center justify-between"> */}
@@ -112,12 +112,37 @@ const Navbar = ({setIsEnquiryModalOpen}) => {
 
 
                     {/* Quote Button (Desktop Only) */}
-                    <button
+                    <button className="request-nav-button desktop px-10 py-2"
+                        onClick={() => setIsEnquiryModalOpen(true)}
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            className="arr-2"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                            ></path>
+                        </svg>
+                        <span className="text">Get Quote</span>
+                        <span className="circle"></span>
+                        <svg
+                            viewBox="0 0 24 24"
+                            className="arr-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                            ></path>
+                        </svg>
+                    </button>
+
+                    {/* <button
                         className="quote-btn px-4 py-1 rounded-full text-sm md:text-lg hidden lg:block"
                         onClick={() => setIsEnquiryModalOpen(true)}
                     >
                         Get Quote
-                    </button>
+                    </button> */}
 
                     {/* Mobile Menu Button */}
                     <div className="lg:hidden flex items-center">
@@ -136,10 +161,10 @@ const Navbar = ({setIsEnquiryModalOpen}) => {
             {/* Mobile Menu */}
             <div
                 className={`rounded-b-lg absolute top-full left-0 w-full transition-all duration-1000 ease-in-out transform ${isMobileMenuOpen ? 'max-h-screen' : 'max-h-0'
-                    } overflow-hidden ${isScrolled ? 'bg-selBlack' : 'bg-red-950/30 '} lg:hidden uppercase`}
+                    } overflow-hidden ${isScrolled ? 'bg-selBlack' : 'bg-red-950/30 backdrop-blur-3xl'} lg:hidden uppercase`}
                 id="mobile-menu"
             >
-                <div className="space-y-1 px-2 pb-3 flex flex-col justify-center items-start">
+                <div className="px-2 pb-3 flex flex-col justify-center items-start">
                     {navLists.map((item) => (
                         <NavLink
                             key={item.order}
@@ -153,28 +178,35 @@ const Navbar = ({setIsEnquiryModalOpen}) => {
                             {item.name}
                         </NavLink>
                     ))}
-                    <button
-                        className="ml-4 quote-btn px-4 py-1 rounded-sm text-sm animate-pulse uppercase"
+
+
+                    <button className="ml-3 request-nav-button animate-pulse mobile px-7 py-1"
                         onClick={() => setIsEnquiryModalOpen(true)}
                     >
-                        Get Quote
+                        <svg
+                            viewBox="0 0 24 24"
+                            className="arr-2"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                            ></path>
+                        </svg>
+                        <span className="text">Get Quote</span>
+                        <span className="circle"></span>
+                        <svg
+                            viewBox="0 0 24 24"
+                            className="arr-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                            ></path>
+                        </svg>
                     </button>
                 </div>
             </div>
 
-            {/* Modal for Quote */}
-                <div className="hidden inset-0 items-center justify-center bg-black bg-opacity-50 z-50">
-                    <div className="bg-white p-4 rounded-lg shadow-lg">
-                        <h2 className="text-xl font-semibold mb-2">Request a Quote</h2>
-                        {/* Your enquiry modal content goes here */}
-                        <button
-                            onClick={() => setIsEnquiryModalOpen(false)}
-                            className="mt-4 px-4 py-2 bg-red-500 text-white rounded-full"
-                        >
-                            Close
-                        </button>
-                    </div>
-                </div>
         </nav>
     );
 };

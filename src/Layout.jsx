@@ -32,7 +32,7 @@ const Layout = () => {
           />
         </div>
 
-        <Footer />
+        <Footer setIsEnquiryModalOpen={setIsEnquiryModalOpen} />
       </div>
     </div>
   );

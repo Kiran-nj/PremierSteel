@@ -193,6 +193,115 @@ body::-webkit-scrollbar-thumb {
 .quote-btn:active {
   scale: 1.1;
 }
+
+/* RequestButton navbar */
+.request-nav-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 0px;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 0 0 2px white;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.request-nav-button svg {
+  position: absolute;
+  width: 24px;
+  fill: white;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.request-nav-button .arr-1 {
+  right: 16px;
+}
+
+.request-nav-button .arr-2 {
+  left: -25%;
+}
+
+.request-nav-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 0;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.request-nav-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.request-nav-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 0px;
+}
+
+.request-nav-button:hover .arr-1 {
+  right: -25%;
+}
+
+.request-nav-button:hover .arr-2 {
+  left: 16px;
+}
+
+.request-nav-button:hover .text {
+  transform: translateX(12px);
+}
+
+.request-nav-button:hover svg {
+  fill: #212121;
+}
+
+.request-nav-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 0 4px white;
+}
+
+.request-nav-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .request-nav-button {
+    font-size: 14px;
+    display: none; /* Hide button on mobile */
+  }
+
+  /* To show it only on mobile, override with another class if needed */
+  .request-nav-button.mobile {
+    display: flex; /* Show button on mobile if using an additional 'mobile' class */
+  }
+  .request-nav-button svg {
+    width: 20px;
+  }
+
+  .request-nav-button .circle {
+    width: 15px;
+    height: 15px;
+  }
+}
 /* nav ends */
 
 /* footer */
@@ -274,5 +383,113 @@ body::-webkit-scrollbar-thumb {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
 }
+
+/* request btn */
+/* RequestButton.css */
+.request-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 0px;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 0 0 2px white;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.request-button svg {
+  position: absolute;
+  width: 24px;
+  fill: white;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.request-button .arr-1 {
+  right: 16px;
+}
+
+.request-button .arr-2 {
+  left: -25%;
+}
+
+.request-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 0;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.request-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.request-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 0px;
+}
+
+.request-button:hover .arr-1 {
+  right: -25%;
+}
+
+.request-button:hover .arr-2 {
+  left: 16px;
+}
+
+.request-button:hover .text {
+  transform: translateX(12px);
+}
+
+.request-button:hover svg {
+  fill: #212121;
+}
+
+.request-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 0 4px white;
+}
+
+.request-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .request-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .request-button svg {
+    width: 20px;
+  }
+
+  .request-button .circle {
+    width: 15px;
+    height: 15px;
+  }
+}
+
 
 /* FOOTER end */
