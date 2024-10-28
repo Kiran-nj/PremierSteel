@@ -37,7 +37,7 @@ export const partners = [
 
 
 export const productsList = [
-    { title: 'MS Joints', category: 'Energy / Tools', imageSrc: steelAngles },
+    { title: 'MS Joists', category: 'Energy / Tools', imageSrc: steelAngles },
     { title: 'MS Channels', category: 'Energy / Tools', imageSrc: channel },
     { title: 'MS Plates', category: 'Energy / Tools', imageSrc: sheet },
     { title: 'MS Angles', category: 'Energy / Tools', imageSrc: angles },
@@ -49,7 +49,7 @@ export const productsList = [
   ];
 
   export const featuredProjects = [
-      { id: '01', name: 'MS Joints', image: steelAngles, description: 'Sponge iron is the key raw material required to manufacture high quality steel. It is quite versatile and can be used in both induction as well as electric arc furnaces.' },
+      { id: '01', name: 'MS Joists', image: steelAngles, description: 'Sponge iron is the key raw material required to manufacture high quality steel. It is quite versatile and can be used in both induction as well as electric arc furnaces.' },
       { id: '02', name: 'MS Channels', image: channel, description: 'Sponge iron is the key raw material required to manufacture high quality steel. It is quite versatile and can be used in both induction as well as electric arc furnaces.' },
       { id: '03', name: 'MS Plates', image: sheet, description: 'Sponge iron is the key raw material required to manufacture high quality steel. It is quite versatile and can be used in both induction as well as electric arc furnaces.' },
       { id: '04', name: 'GP/MS Tubes & Pipes', image: squareAndRound, description: 'Sponge iron is the key raw material required to manufacture high quality steel. It is quite versatile and can be used in both induction as well as electric arc furnaces.' },
