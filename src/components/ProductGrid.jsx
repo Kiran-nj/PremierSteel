@@ -15,12 +15,13 @@ const ProjectGrid = () => {
 
           {/* Text Content */}
           <div className="absolute inset-0 flex flex-col justify-end p-6">
-            <h3 className="text-white text-lg font-semibold leading-tight group-hover:text-xl transition-all duration-500">
-              {project.title}
-            </h3>
-            <p className="text-white text-sm opacity-80 mt-2 group-hover:opacity-100 transition-all duration-500">
-              {project.category}
-            </p>
+          <h3 className="text-white text-lg font-semibold leading-tight group-hover:text-xl transition-all duration-500 text-shadow-black">
+  {project.title}
+</h3>
+<p className="text-white text-sm opacity-80 mt-2 group-hover:opacity-100 transition-all duration-500 text-shadow-black">
+  {project.category}
+</p>
+
           </div>
         </div>
       ))}

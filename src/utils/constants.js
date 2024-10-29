@@ -5,13 +5,15 @@ import jspLogo from '../assets/images/partners/jindal.jpg';
 import sailLogo from '../assets/images/partners/sail-logo.png';
 import vizagLogo from '../assets/images/partners/vizag-logo.jpg';
 import apolloLogo from '../assets/images/partners/apollo-logo.png';
-import steelAngles from '../assets/steelangles.jpg';
-import channel from '../assets/channel.jpg';
-import sheet from '../assets/sheet.jpg';
+import steelAngles from '../assets/ibeam.jpg';
+import channel from '../assets/channel3.jpg';
+import sheet from '../assets/msplates.jpg';
 import angles from '../assets/angles.jpg';
-import flats from '../assets/steelangles.jpg'; // Update if it's a different image
+import flats from '../assets/flats.jpg'; // Update if it's a different image
 import rounds from '../assets/round.jpg';
 import squareAndRound from '../assets/squareandround.jpg';
+import square from '../assets/mssquare.jpg';
+import Gisheet from '../assets/gisheet.jpg';
 import sheet2 from '../assets/sheet2.jpg';
 import founderImg from '../assets/founder.jpeg';
 import backgroundImg from '../assets/images/footer_bg.jpeg';
@@ -43,9 +45,13 @@ export const productsList = [
     { title: 'MS Angles', category: 'Energy / Tools', imageSrc: angles },
     { title: 'MS Flats', category: 'Energy / Tools', imageSrc: flats },
     { title: 'MS Rounds', category: 'Energy / Tools', imageSrc: rounds },
-    { title: 'MS Squares', category: 'Energy / Tools', imageSrc: squareAndRound },
+    { title: 'MS Squares', category: 'Energy / Tools', imageSrc: square },
     { title: 'MS Chequered Plates', category: 'Energy / Tools', imageSrc: sheet2 },
     { title: 'GP/MS Tubes & Pipes', category: 'Energy / Tools', imageSrc: squareAndRound },
+    { title: 'GI Sheets', category: 'Energy / Tools', imageSrc: Gisheet },
+
+
+
   ];
 
   export const featuredProjects = [

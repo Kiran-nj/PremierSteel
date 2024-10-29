@@ -5,6 +5,7 @@ import axios from 'axios'; // Ensure you have axios installed
 import { companyLogo, productsList } from '../utils/constants';
 import { POST_ENQUIRY_FORM } from '../utils/urls';
 import { BsCheckSquare, BsSquare } from 'react-icons/bs';
+import FormBtn from './FormBtn';
 
 const EnquiryModal = ({ isEnquiryModalOpen, setIsEnquiryModalOpen }) => {
     const modalRef = useRef();
@@ -230,7 +231,8 @@ const EnquiryModal = ({ isEnquiryModalOpen, setIsEnquiryModalOpen }) => {
                                 onChange={handleInputChange}
                             ></textarea>
                         <div className='flex justify-end'>
-                            <button className='text-selBlack bg-gradient-to-r from-[#ffe5b2] to-[#9c8611] px-2 md:px-5 py-1 md:py-2 rounded-sm uppercase font-extrabold text-xs'>Submit Quote</button>
+                            {/* <button className='text-selBlack bg-gradient-to-r from-[#ffe5b2] to-[#9c8611] px-2 md:px-5 py-1 md:py-2 rounded-sm uppercase font-extrabold text-xs'>Submit Quote</button> */}
+                            <FormBtn/>
                         </div>
                         </div>
                     </form>
