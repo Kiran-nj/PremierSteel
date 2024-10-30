@@ -23,53 +23,94 @@ const ContactsContentSection = () => {
                                 <p className='block md:hidden'>Reach out to us for any queries regarding our products and services. We are here to help and guide you through our offerings.</p>
                             </div>
                         </div>
+                        <div className="grid gap-4 md:gap-6 md:grid-cols-3 w-full px-5 md:px-0">
+    <div className="contact-card order-2 md:order-1 p-6 bg-black text-white shadow-lg rounded-lg flex flex-col items-center text-center transition-all transform hover:scale-105 hover:shadow-xl">
+        <ContactCard 
+            icon={<IoCall />} 
+            title="Call Us" 
+            text={`+91 ${companyPhoneNo}`} 
+            onClick={() => window.location.href = `https://wa.me/91${companyPhoneNo}`} 
+        />
+    </div>
+    <div className="contact-card order-1 md:order-2 p-8 bg-white text-black shadow-lg rounded-lg flex flex-col items-center text-center transform scale-105 transition-all hover:scale-110 hover:shadow-xl">
+        <ContactCard 
+            icon={<MdLocationOn />} 
+            title="Address" 
+            text={`Premier Steels\nStock Yard, Pullepady Road\nErnakulam, PIN: 628017`} 
+            onClick={() => window.open("https://maps.app.goo.gl/NsLitg5Y48vRQHf46", "_blank")} 
+        />
+    </div>
+    <div className="contact-card order-3 md:order-3 p-6 bg-black text-white shadow-lg rounded-lg flex flex-col items-center text-center transition-all transform hover:scale-105 hover:shadow-xl">
+        <ContactCard 
+            icon={<MdEmail />} 
+            title="Email Us" 
+            text={companyEmail} 
+            onClick={() => window.location.href = `mailto:${companyEmail}`} 
+        />
+    </div>
+</div>
 
-                        <div className="grid gap-4 md:gap-6 md:grid-cols-3 lg:grid-cols-3 w-full px-5 md:px-0">
-                            <div className="order-2 md:order-1">
-                                <ContactCard icon={<IoCall />} title="Call Us" text={`+91 ${companyPhoneNo}`} onClick={() => window.location.href = `https://wa.me/91${companyPhoneNo}`} />
-                            </div>
-                            <div className="order-1 md:order-2">
-                                <ContactCard icon={<MdLocationOn />} title="Address" text={`Premier Steels\nStock Yard, Pullepady Road\nErnakulam, PIN: 628017`} onClick={() => window.open("https://maps.app.goo.gl/NsLitg5Y48vRQHf46", "_blank")} />
-                            </div>
-                            <div className="order-3 md:order-3">
-                                <ContactCard icon={<MdEmail />} title="Email Us" text={companyEmail} onClick={() => window.location.href = `mailto:${companyEmail}`}  />
-                            </div>
-                        </div>
+
                     </div>
                 </div>
 
             </div>
 
             <div className="bg-selBlack text-white py-8 md:py-10">
-                <div className='flex flex-col justify-center items-center px-4 text-center gap-8 md:gap-10'>
-                    <div className='flex flex-col justify-center items-center'>
-                        <h2 className='font-bold text-lg md:text-xl uppercase'>Send us an email</h2>
-                        <div className="h-[1px] w-full bg-white mt-3"></div>
-                    </div>
+    <div className="flex flex-col justify-center items-center px-4 text-center gap-8 md:gap-10">
+        <div className="flex flex-col justify-center items-center">
+            <h2 className="font-bold text-lg md:text-xl uppercase">Send us an email</h2>
+            <div className="h-[1px] w-full bg-white mt-3"></div>
+        </div>
 
-                    <div className='text-sm md:text-base'>
-                        <p>We're here to answer any questions and provide support.</p>
-                        <p>Feel free to leave us a message, and we'll get back to you promptly.</p>
-                    </div>
+        <div className="text-sm md:text-base">
+            <p>We're here to answer any questions and provide support.</p>
+            <p>Feel free to leave us a message, and we'll get back to you promptly.</p>
+        </div>
 
-                    <form className="flex flex-col space-y-4 w-full max-w-md">
-                        <div className='flex flex-col md:flex-row md:space-x-5 text-black w-full'>
-                            <input type="text" placeholder="Your Name" className="p-2 bg-gray-200 text-black focus:outline-none w-full placeholder:text-xs md:placeholder:text-base" />
-                            <input type="email" placeholder="Your Email" className="p-2 bg-gray-200 text-black focus:outline-none w-full placeholder:text-xs md:placeholder:text-base" />
-                        </div>
-                        <textarea placeholder="Your Message" className="p-2 bg-gray-200 text-black focus:outline-none w-full placeholder:text-xs md:placeholder:text-base" rows="4" />
-                        <div className='flex justify-end'>
-                            <button type="submit" className="relative group overflow-hidden border-2 px-4 py-2 border-selRed w-full">
-                                <span className="font-bold text-white text-sm relative z-10 group-hover:text-selRed duration-500">Send Message</span>
-                                <span className="absolute top-0 left-0 w-full bg-selRed duration-500 group-hover:-translate-x-full h-full"></span>
-                                <span className="absolute top-0 left-0 w-full bg-selRed duration-500 group-hover:translate-x-full h-full"></span>
-                                <span className="absolute top-0 left-0 w-full bg-selRed duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
-                                <span className="absolute delay-300 top-0 left-0 w-full bg-selRed duration-500 group-hover:translate-y-full h-full"></span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+        <form className="flex flex-col space-y-4 w-full max-w-xl">
+            {/* Name Field */}
+            <input 
+                type="text" 
+                placeholder="Your Name" 
+                className="p-3 bg-gray-200 text-black focus:outline-none w-full rounded-md placeholder:text-xs md:placeholder:text-base" 
+            />
+
+            {/* Email Field */}
+            <input 
+                type="email" 
+                placeholder="Your Email" 
+                className="p-3 bg-gray-200 text-black focus:outline-none w-full rounded-md placeholder:text-xs md:placeholder:text-base" 
+            />
+
+            {/* Phone Number Field */}
+            <input 
+                type="tel" 
+                placeholder="Your Phone Number" 
+                className="p-3 bg-gray-200 text-black focus:outline-none w-full rounded-md placeholder:text-xs md:placeholder:text-base" 
+            />
+
+            {/* Message Field */}
+            <textarea 
+                placeholder="Your Message" 
+                className="p-3 bg-gray-200 text-black focus:outline-none w-full rounded-md placeholder:text-xs md:placeholder:text-base" 
+                rows="4" 
+            />
+
+            {/* Submit Button */}
+            <div className="flex justify-end">
+                <button type="submit" className="relative group overflow-hidden border-2 px-4 py-2 border-selRed w-full rounded-md">
+                    <span className="font-bold text-white text-sm relative z-10 group-hover:text-selRed duration-500">Send Message</span>
+                    <span className="absolute top-0 left-0 w-full bg-selRed duration-500 group-hover:-translate-x-full h-full"></span>
+                    <span className="absolute top-0 left-0 w-full bg-selRed duration-500 group-hover:translate-x-full h-full"></span>
+                    <span className="absolute top-0 left-0 w-full bg-selRed duration-500 delay-300 group-hover:-translate-y-full h-full"></span>
+                    <span className="absolute delay-300 top-0 left-0 w-full bg-selRed duration-500 group-hover:translate-y-full h-full"></span>
+                </button>
             </div>
+        </form>
+    </div>
+</div>
+
 
 
             <div className='h-96 md:h-96'>
