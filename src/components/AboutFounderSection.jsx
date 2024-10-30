@@ -31,7 +31,7 @@ const AboutFounderSection = () => {
         duration: 1,
         stagger: 0.3,
         ease: 'power3.out',
-      })
+      });
 
     // Cleanup function
     return () => {
@@ -41,17 +41,15 @@ const AboutFounderSection = () => {
     };
   }, []);
 
-
-
   return (
     <div ref={sectionRef} className="founder-section bg-blue-50 py-16 px-4 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto space-y-24">
         {teamMembers.map((member, index) => (
           <div 
             key={member.name}
-            className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center justify-between gap-12`}
+            className={`flex flex-col items-center justify-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12`}
           >
-            <div className="animate-text w-full text-left opacity-0">
+            <div className="animate-text w-full text-center opacity-0">
               <h3 className="font-bold text-lg text-gray-700 uppercase mb-4">{member.role}</h3>
               <h2 className="text-3xl font-semibold text-gray-900 mb-6">{member.name}</h2>
               {member.description.map((paragraph, idx) => (
@@ -61,13 +59,13 @@ const AboutFounderSection = () => {
               ))}
             </div>
 
-            {/* <div className="animate-image w-full md:w-1/2 h-[60vh] opacity-0 scale-90">
+          {/*}  <div className="animate-image w-full md:w-1/2 h-[60vh] opacity-0 scale-90">
               <img
                 src={member.image} // Dynamically render the image from teamMembers array
                 alt={member.name}
                 className="w-full h-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
               />
-            </div> */}
+            </div>*/}
           </div>
         ))}
       </div>

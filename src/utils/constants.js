@@ -19,6 +19,7 @@ import founderImg from '../assets/founder.jpeg';
 import backgroundImg from '../assets/images/footer_bg.jpeg';
 import Logo from '../assets/images/company_logo_bg.png'; // Update the path to your image
 import completedYears from '../assets/images/forty.png'; // Update the path to your image
+import { IoMdBusiness, IoMdPeople, IoMdTime } from "react-icons/io";
 
 export const navLists = [
   { name: 'Home', path: '/', order: 1 },
@@ -137,3 +138,4 @@ export const companyEmail = 'premiersteels0020@gmail.com'
 export const bgImg = backgroundImg;
 export const companyLogo = Logo;
 export const yearsCompleted = completedYears;
+

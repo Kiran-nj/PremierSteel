@@ -3,6 +3,8 @@ import AboutHero from '../components/AboutHero';
 import MiniAbout from '../components/MiniAbout';
 import AboutFounderSection from '../components/AboutFounderSection';
 import { Helmet } from 'react-helmet-async';
+import AboutCards from '../components/AboutCards';
+import StatisticsSection from '../components/StatisticsSection ';
 
 const About = () => {
   useEffect(() => {
@@ -22,8 +24,10 @@ const About = () => {
         <meta name="description" content="Learn about Premier Steels, our mission, values, and the team behind our success." />
       </Helmet>
       <AboutHero /> {/* this has the video */}
-      <MiniAbout />
+      <AboutCards/>
+     {/* <MiniAbout /> optional  */} 
       <AboutFounderSection />
+      <StatisticsSection/>
     </div>
   );
 }
