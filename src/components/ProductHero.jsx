@@ -39,7 +39,7 @@ const ProductHero = () => {
       {/* Text Overlay */}
       <div className="absolute inset-0 bg-selBlack/60 flex items-center justify-center">
       <h1 className="hero-section-header mb-2 sm:mb-4">
-          Our Products
+         Products
         </h1>
       </div>
     </div>

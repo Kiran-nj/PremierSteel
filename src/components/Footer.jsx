@@ -55,130 +55,135 @@ function Footer({ setIsEnquiryModalOpen }) {
           <h1 >or call +91 {companyPhoneNo}</h1>
         </div>
       </div>
-      <div className='bg-black'>
+
+
+      <div className='bg-black md:px-20 py-5 md:py-14'>
         {/* Footer Section */}
-        <div className="px-6 py-8 lg:px-8 lg:py-28" >
-          <div className="flex flex-col lg:flex-row lg:justify-around">
-            {/* Left Section: Logo and Address */}
-            <div className="mb-2 lg:mb-0 md:mt-2 order-1 flex flex-col items-center text-[#a9a9a9]">
-              {/* Logo and Company Name Section */}
-              <div className="flex items-center gap-2">
-                <NavLink to={'/'} className=''>
-                  <div style={{ borderRadius: "50%" }} className='bg-selRed-400'>
-                    <img src={companyLogo} alt="Company Logo" className={`w-8 h-5 md:w-10 md:h-7 transition-all duration-700 ease-in-out`} />
-                  </div>
-                </NavLink>
-                <NavLink to={'/'} className="flex items-center justify-center text-center mt-1">
-                  <h1 className={`company-font-only text-2xl md:text-3xl transition-all duration-700 ease-in-out font-semibold md:font-bold text-white`}
-                  >
-                    Premier Steels
-                  </h1>
-                </NavLink>
-              </div>
-
-
-              <p className="text-xs md:text-base">STOCK YARD, PULLEPADY ROAD</p>
-              <p className="text-xs md:text-base">ERNAKULAM. PIN: 628017</p>
-
-              {/* Pagination dots */}
-              <div className="flex justify-center md:justify-start mt-2 space-x-4 footer">
-                <a className="flex justify-center items-center" href={`https://wa.me/+91${companyPhoneNo}`} target='blank'>
-                  <FaWhatsapp size={"1.5rem"} className=" cursor-pointer footer" />
-                </a>
-                <a className="flex justify-center items-center" href="https://www.facebook.com/people/Luxe-Moto/61556341210047/" target='blank'>
-                  <AiOutlineFacebook size={"1.5rem"} className=" cursor-pointer footer" />
-                </a>
-                {/* <FaTwitter size={"1.5rem"} className=" cursor-pointer footer" /> */}
-                <a className="flex justify-center items-center" href="https://www.youtube.com/channel/UCG2c97djf6d2yq8ONRlYXGQ/videos" target='blank'>
-                  <FiYoutube size={"1.5rem"} className=" cursor-pointer footer" />
-                </a>
-                <a className="flex justify-center items-center" href="https://www.instagram.com/luxe_moto_/" target='blank'>
-                  <FaInstagram size={"1.5rem"} className=" cursor-pointer footer" />
-                </a>
-              </div>
+        {/* <div className="py-8 flex flex-col lg:flex-row justify-between items-center border-b-2 border-gray-700"> */}
+        {/* Left Section: Logo, Company Name, and Tagline */}
+        <div className="flex flex-col md:items-center md:mb-4 lg:mb-0 lg:mr-8 text-[#a9a9a9]">
+          <NavLink to="/" className="flex items-center">
+            <div className="bg-selRed-400 rounded-full p-2 flex items-center">
+              <img src={companyLogo} alt="Company Logo" className="w-5 h-5 lg:w-10 lg:h-6 transition-all duration-700 ease-in-out" />
             </div>
+            <h1 className="company-font-only text-2xl md:text-3xl font-semibold md:font-bold text-white">
+              Premier Steels
+            </h1>
+          </NavLink>
+          <div className='hidden md:flex w-full justify-center'>
+            <p className="text-xs md:text-sm text-white ">
+              Quality • Strength • Durability
+            </p>
+          </div>
+          <div className="h-[1px] w-[60%] bg-lineGray mt-5 hidden md:block"></div>
 
-            {/* Middle Section: Links */}
-            <div className="hidden md:flex flex-row lg:space-y-0 lg:space-x-36 order-3 md:order-2 justify-around mt-10 md:mt-0 text-[#a9a9a9]">
-              {/* Products */}
-              <div>
-                <h4 className="font-bold text-base mb-2">PRODUCTS</h4>
-                <ul className="space-y-1 columns-1 text-sm md:text-base text-center md:text-start text-[#656565]">
-                  {productsList.slice(0, 5).map((prod, index) => (
-                    <li key={index} className="text-xs md:text-sm uppercase">{prod.title}</li>
-                  ))}
+        </div>
 
-                </ul>
-              </div>
 
-              {/* Information */}
-              <div>
-                <h4 className="font-bold text-base mb-2">INFORMATION</h4>
-                <ul className="space-y-1 text-xs md:text-sm text-center md:text-start text-[#656565]">
-                  <li >HOME</li>
-                  <li >PRODUCTS</li>
-                  <li >BLOG</li>
-                  <li >ABOUT</li>
-                  <li >CONTACT</li>
-                </ul>
-              </div>
-            </div>
+        {/* Location, Products, Information, and Contact Sections */}
+        <div className="flex flex-col lg:flex-row lg:justify-around text-[#a9a9a9] space-y-2 md:space-y-10 lg:space-y-0 md:mt-8 pl-2 md:pl-0">
+          {/* Location Section */}
+          <div className="flex flex-col items-start text-center lg:items-start lg:text-left order-1">
+            <h4 className="font-bold text-sm mb-2 hidden md:block">LOCATION</h4>
+            <p className="text-xs md:text-xs">STOCK YARD, PULLEPADY ROAD</p>
+            <p className="text-xs md:text-xs">ERNAKULAM, PIN: 628017</p>
+          </div>
 
-            {/* Right Section: Contact Info and Button */}
-            <div className="mt-4 md:mt-3 flex flex-col items-center order-2 md:order-3 text-[#a9a9a9]">
-              <div className='flex flex-col text-center items-center'>
-                <h4 className="font-bold text-base ">CONTACT US</h4>
-                <span name='mail-btn' className="cursor-pointer text-sm md:text-base flex items-center gap-1 w-fit no-underline uppercase" onClick={() => window.location.href = 'mailto:info.luxemoto@gmail.com'}>
-                  <FiMail className="text-xl" /> premiersteels0020@gmail.com
-                </span>
-                <span name='phone-btn' className="cursor-pointer text-sm md:text-base flex items-center gap-1 w-fit" onClick={() => window.location.href = `tel:+91${companyPhoneNo}`}>
-                  <MdOutlineCall className='text-xl' /> +91 8589043416
-                </span>
-              </div>
+          {/* Products Section */}
+          <div className="flex flex-col items-start  md:text-center lg:items-start lg:text-left order-3 md:order-2">
+            <h4 className="font-bold text-sm mb-2">PRODUCTS</h4>
+            <ul className="space-y-1 text-xs md:text-xs text-lineGray">
+              {productsList.slice(0, 5).map((prod, index) => (
+                <li key={index} className="uppercase">{prod.title}</li>
+              ))}
+            </ul>
+          </div>
 
-              {/* Enquiry Button */}
-              <NavLink to={'/contact'}
-                className="text-xs mt-2 flex justify-center gap-1 items-center mx-auto shadow-xl bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-borderColor hover:text-white before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-2 py-2 overflow-hidden border-[.5px] rounded-none group"
-              >
-                Contact
-                <div className="rotate-45 border rounded-full p-1 transition-transform duration-300 group-hover:rotate-90">
-                  <FaArrowUpLong className='text-[.4rem]' />
-                </div>
-              </NavLink>
+          {/* Information Section */}
+          <div className="flex flex-col items-start  md:text-center lg:items-start lg:text-left order-4 md:order-3">
+            <h4 className="font-bold text-sm mb-2">INFORMATION</h4>
+            <ul className="space-y-1 text-xs md:text-xs text-lineGray">
+              <li>HOME</li>
+              <li>PRODUCTS</li>
+              <li>BLOG</li>
+              <li>ABOUT</li>
+              <li>CONTACT</li>
+            </ul>
+          </div>
 
+          {/* Contact Us Section */}
+          <div className="flex flex-col items-start text-center lg:items-end lg:text-left order-2 md:order-4 pb-5 md:pb-0">
+            <h4 className="font-bold text-sm mb-2 hidden md:block">CONTACT US</h4>
+            <span className="cursor-pointer text-xs md:text-xs flex items-center gap-1 uppercase" onClick={() => window.location.href = `mailto:${companyEmail}`}>
+              <FiMail className="text-xl" /> {companyEmail}
+            </span>
+            <span className="cursor-pointer text-xs md:text-xs flex items-center gap-1" onClick={() => window.location.href = `tel:+91${companyPhoneNo}`}>
+              <MdOutlineCall className='text-xl' /> +91 {companyPhoneNo}
+            </span>
+
+            <div className=" flex md:hidden items-center gap-5 w-full flex-1 text-white pt-4">
+              <a href={`https://wa.me/+91${companyPhoneNo}`} target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
+                <FaWhatsapp size="1.5rem" className="cursor-pointer" />
+              </a>
+              <a href="https://www.facebook.com/people/Luxe-Moto/61556341210047/" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
+                <AiOutlineFacebook size="1.5rem" className="cursor-pointer" />
+              </a>
+              <a href="https://www.youtube.com/channel/UCG2c97djf6d2yq8ONRlYXGQ/videos" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
+                <FiYoutube size="1.5rem" className="cursor-pointer" />
+              </a>
+              <a href="https://www.instagram.com/luxe_moto_/" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
+                <FaInstagram size="1.5rem" className="cursor-pointer" />
+              </a>
             </div>
           </div>
         </div>
 
+        <div className="hidden md:flex justify-center lg:justify-center items-center gap-4 pb-2 lg:pb-2 w-full flex-1 text-white pt-12">
+          <a href={`https://wa.me/+91${companyPhoneNo}`} target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
+            <FaWhatsapp size="1.5rem" className="cursor-pointer" />
+          </a>
+          <a href="https://www.facebook.com/people/Luxe-Moto/61556341210047/" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
+            <AiOutlineFacebook size="1.5rem" className="cursor-pointer" />
+          </a>
+          <a href="https://www.youtube.com/channel/UCG2c97djf6d2yq8ONRlYXGQ/videos" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
+            <FiYoutube size="1.5rem" className="cursor-pointer" />
+          </a>
+          <a href="https://www.instagram.com/luxe_moto_/" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
+            <FaInstagram size="1.5rem" className="cursor-pointer" />
+          </a>
+        </div>
 
-        <footer className="text-borderColor py-1 md:py-2 bg-selBlack">
-          <div className="container md:ml-auto md:pr-5">
-            <div className="flex flex-col items-center md:items-end">
-              <div className="w-full flex flex-col text-center md:text-right items-center md:items-end text-[.5rem] md:text-[.6rem]">
 
-                {/* Copyright Text */}
-                <div className="flex items-center space-x-2">
-                  <p className="font-medium">
-                    ©2024&nbsp;
-                    <span className="uppercase">Premier Steels |</span>
-                    &nbsp;All Rights Reserved.
-                  </p>
-                </div>
 
-                {/* Powered by Text */}
-                <div className="flex flex-col md:flex-row items-center md:justify-end space-y-2 md:space-y-0 md:space-x-2">
-                  <p className="text-[.5rem] md:text-[.6rem] scale-90 md:scale-95 font-medium">
-                    Powered by
-                    <a href="https://cyfletech.com" className="text-blue ml-1" target="_blank" rel="noopener noreferrer">
-                      <strong className="font-normal text-white">Cyfletech</strong>
-                    </a>
-                  </p>
-                </div>
+      </div>
+      {/* powered by section */}
+      <footer className="text-lineGray py-1 md:py-2 bg-black">
+        <div className="container mx-auto md:px-5">
+          <div className="flex flex-col md:flex-row items-center md:justify-center">
+            <div className="flex flex-col text-right md:text-center w-full items-end md:items-center text-[.5rem] md:text-[.6rem]">
+
+              {/* Copyright Text */}
+              <div className="flex items-center justify-end md:justify-center space-x-2">
+                <p className="font-medium">
+                  ©2024&nbsp;
+                  <span className="uppercase">Premier Steels |</span>
+                  &nbsp;All Rights Reserved.
+                </p>
+              </div>
+
+              {/* Powered by Text */}
+              <div className="flex flex-col md:flex-row items-center md:justify-center space-y-2 md:space-y-0 md:space-x-2">
+                <p className="text-[.5rem] md:text-[.6rem] scale-90 md:scale-95 font-medium">
+                  Powered by
+                  <a href="https://cyfletech.com" className="text-blue ml-1" target="_blank" rel="noopener noreferrer">
+                    <strong className="font-normal text-white">Cyfletech</strong>
+                  </a>
+                </p>
               </div>
             </div>
           </div>
-        </footer>
-      </div>
+        </div>
+      </footer>
 
     </>
   );

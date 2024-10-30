@@ -46,17 +46,9 @@ const MiniAbout = () => {
 
   return (
     <div
-  className="relative py-7 px-6 md:px-20 overflow-hidden text-black pt-12"
+  className="relative overflow-hidden text-black"
 >
-  <div
-    className="absolute inset-0 bg-cover bg-center filter blur-md"
-    style={{
-      backgroundImage: `url(${steel5})`,
-      zIndex: 1,
-    }}
-  ></div>
-  
-  <div className="bg-white bg-opacity-90 flex flex-col md:flex-row items-center gap-10 border md:p-10 rounded-2xl relative z-10">
+  <div className="bg-white bg-opacity-90 flex flex-col md:flex-row items-center md:p-10 relative z-10">
     <div ref={imageRef} className="w-full md:w-1/2 h-[30vh] sm:h-[30vh] md:h-[38vh] flex justify-center items-center">
       <img
         src={yearsCompleted}
@@ -65,8 +57,8 @@ const MiniAbout = () => {
       />
     </div>
     
-    <div ref={textRef} className="md:w-1/2 pl-3 md:pl-0 pb-3 md:pb-0">
-      <h1 className="text-2xl md:text-4xl font-thin text-black mb-6 text-start">
+    <div ref={textRef} className="md:w-1/2 pl-3 md:pl-0 pb-5 md:pb-0 -mt-10 md:-mt-0 flex flex-col justify-center">
+      <h1 className="text-2xl md:text-4xl font-thin text-black mb-6 text-center md:text-start">
         WELCOME TO <span className='company-font-only text-5xl md:text-5xl text-selRed block md:inline'>Premier Steels</span>
       </h1>
       <p className="mb-4 uppercase md:text-start">

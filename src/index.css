@@ -76,6 +76,10 @@ body::-webkit-scrollbar-thumb {
   filter: drop-shadow(2px 2px 20px cyan);
 }
 
+.floating-btn-shadow {
+  /* box-shadow: 2px 2px 20px cyan; */
+  filter: drop-shadow(2px 7px 7px black);
+}
 /* HOME */
 .homepage-video-iframe {
   width: 100vw;
