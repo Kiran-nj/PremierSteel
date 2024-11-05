@@ -2,7 +2,7 @@ import React from 'react';
 
 const FormBtn = () => {
   return (
-    <button className="cursor-pointer w-44 h-12 bg-selRed text-white rounded-lg hover:shadow-lg transition-all group active:w-11 active:h-11 active:rounded-full active:duration-300 ease-in-out">
+    <button className="cursor-pointer w-28 md:w-32 h-7 md:h-8 bg-selRed text-white rounded-lg hover:shadow-lg transition-all group active:w-11 active:h-11 active:rounded-full active:duration-300 ease-in-out">
       <svg
         className="animate-spin hidden group-active:block mx-auto"
         width="33"
@@ -20,7 +20,7 @@ const FormBtn = () => {
           fill="white"
         />
       </svg>
-      <span className="group-active:hidden">Submit a quote</span>
+      <span className="group-active:hidden uppercase">Submit a quote</span>
     </button>
   );
 };

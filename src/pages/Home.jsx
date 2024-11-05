@@ -28,12 +28,12 @@ function Home() {
       <StrategicPartners />
 
 
-      
-            {/* Hidden keywords section  for SEO*/}
+
+      {/* Hidden keywords section  for SEO*/}
 
 
 
-       <div className="hidden lg:block absolute -z-10 top-0 opacity-0 pointer-events-none">
+      <div className="hidden lg:block absolute -z-10 top-0 opacity-0 pointer-events-none">
         <p>
           Steel, TMT, Steel distributor, Steel wholesale, Channels, Beam, Joists, Angle, Plates, Sail,
           Steel Suppliers, Steel Dealers, Steel Wholesalers, Steel Sheets, Stainless Steel Pipes, Mild
@@ -46,49 +46,49 @@ function Home() {
           Quality Steel, India
         </p>
       </div>
-      <div class="absolute left-[-9999px] top-auto w-px h-px overflow-hidden">
-    <h1 class="hidden">Steel</h1>
-    <h2 class="hidden">TMT</h2>
-    <h2 class="hidden">Steel distributor</h2>
-    <h2 class="hidden">Steel wholesale</h2>
-    <h2 class="hidden">Channels</h2>
-    <h2 class="hidden">Beam</h2>
-    <h2 class="hidden">Joists</h2>
-    <h2 class="hidden">Angle</h2>
-    <h2 class="hidden">Plates</h2>
-    <h2 class="hidden">SAIL</h2>
-    <h2 class="hidden">Steel Suppliers</h2>
-    <h2 class="hidden">Steel Dealers</h2>
-    <h2 class="hidden">Steel Wholesalers</h2>
-    <h2 class="hidden">Steel Sheets</h2>
-    <h2 class="hidden">Stainless Steel Pipes</h2>
-    <h2 class="hidden">Mild Steel</h2>
-    <h2 class="hidden">Structural Steel</h2>
-    <h2 class="hidden">Steel Tubes</h2>
-    <h2 class="hidden">Industrial Steel Products</h2>
-    <h2 class="hidden">Steel Fabrication</h2>
-    <h2 class="hidden">Steel Sections</h2>
-    <h2 class="hidden">Metal Suppliers</h2>
-    <h2 class="hidden">Steel Construction Materials</h2>
-    <h2 class="hidden">Galvanized Steel</h2>
-    <h2 class="hidden">Reinforcement Steel</h2>
-    <h2 class="hidden">Heavy Steel Beams</h2>
-    <h2 class="hidden">Steel Bars</h2>
-    <h2 class="hidden">Steel Manufacturing</h2>
-    <h2 class="hidden">Kerala Steel Suppliers</h2>
-    <h2 class="hidden">SAIL Steel Dealers</h2>
-    <h2 class="hidden">Steel Products for Construction</h2>
-    <h2 class="hidden">Durable Steel Materials</h2>
-    <h2 class="hidden">Stainless Steel Plates</h2>
-    <h2 class="hidden">Bulk Steel Supply</h2>
-    <h2 class="hidden">Custom Steel Solutions</h2>
-    <h2 class="hidden">Quality Steel Products</h2>
-    <h2 class="hidden">Affordable Steel Wholesaler</h2>
-    <h2 class="hidden">Trusted Steel Suppliers</h2>
-    <h2 class="hidden">Steel Distributor Near Me</h2>
-    <h2 class="hidden">Premium Quality Steel</h2>
-    <h2 class="hidden">Indian Steel Supplier</h2>
-</div>
+      <div className="absolute left-[-9999px] top-auto w-px h-px overflow-hidden">
+        <h1 className="hidden">Steel</h1>
+        <h2 className="hidden">TMT</h2>
+        <h2 className="hidden">Steel distributor</h2>
+        <h2 className="hidden">Steel wholesale</h2>
+        <h2 className="hidden">Channels</h2>
+        <h2 className="hidden">Beam</h2>
+        <h2 className="hidden">Joists</h2>
+        <h2 className="hidden">Angle</h2>
+        <h2 className="hidden">Plates</h2>
+        <h2 className="hidden">SAIL</h2>
+        <h2 className="hidden">Steel Suppliers</h2>
+        <h2 className="hidden">Steel Dealers</h2>
+        <h2 className="hidden">Steel Wholesalers</h2>
+        <h2 className="hidden">Steel Sheets</h2>
+        <h2 className="hidden">Stainless Steel Pipes</h2>
+        <h2 className="hidden">Mild Steel</h2>
+        <h2 className="hidden">Structural Steel</h2>
+        <h2 className="hidden">Steel Tubes</h2>
+        <h2 className="hidden">Industrial Steel Products</h2>
+        <h2 className="hidden">Steel Fabrication</h2>
+        <h2 className="hidden">Steel Sections</h2>
+        <h2 className="hidden">Metal Suppliers</h2>
+        <h2 className="hidden">Steel Construction Materials</h2>
+        <h2 className="hidden">Galvanized Steel</h2>
+        <h2 className="hidden">Reinforcement Steel</h2>
+        <h2 className="hidden">Heavy Steel Beams</h2>
+        <h2 className="hidden">Steel Bars</h2>
+        <h2 className="hidden">Steel Manufacturing</h2>
+        <h2 className="hidden">Kerala Steel Suppliers</h2>
+        <h2 className="hidden">SAIL Steel Dealers</h2>
+        <h2 className="hidden">Steel Products for Construction</h2>
+        <h2 className="hidden">Durable Steel Materials</h2>
+        <h2 className="hidden">Stainless Steel Plates</h2>
+        <h2 className="hidden">Bulk Steel Supply</h2>
+        <h2 className="hidden">Custom Steel Solutions</h2>
+        <h2 className="hidden">Quality Steel Products</h2>
+        <h2 className="hidden">Affordable Steel Wholesaler</h2>
+        <h2 className="hidden">Trusted Steel Suppliers</h2>
+        <h2 className="hidden">Steel Distributor Near Me</h2>
+        <h2 className="hidden">Premium Quality Steel</h2>
+        <h2 className="hidden">Indian Steel Supplier</h2>
+      </div>
 
     </div>
   );
