@@ -45,13 +45,13 @@ const AboutCards = () => {
     }, []);
 
     return (
-        <div className="flex flex-col items-center py-10 px-4 md:px-0 bg-red-950">
+        <div className="flex flex-col items-center py-10 px-4 md:px-0 bg-selWhite">
          {/*  <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-white">About Us</h2>*/}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full max-w-7xl">
                 {cardData.map((card, index) => (
                     <div
                         key={index}
-                        className="about-card p-6 bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 flex flex-col items-center text-center"
+                        className="about-card p-6 bg-white shadow-lg rounded-lg transform transition duration-300 hover:scale-105 flex flex-col items-center text-center border border-selRed"
                     >
                         <div className="mb-4">{card.icon}</div>
                         <h3 className="text-xl font-semibold mb-2">{card.title}</h3>

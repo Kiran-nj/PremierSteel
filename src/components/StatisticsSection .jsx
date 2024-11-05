@@ -41,8 +41,8 @@ const StatisticsSection = () => {
   ];
 
   return (
-    <div className="timeline md:p-8 bg-selWhite">
-      <div className="text-selRed py-10 px-5 md:px-20">
+    <div className="timeline bg-selWhite">
+      <div className="text-selRed py-5 px-5 md:px-20">
         <div className="content-text max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 text-center">
           {statsData.map((stat, index) => (
             <div
