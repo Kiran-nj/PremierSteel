@@ -24,10 +24,10 @@ const About = () => {
         <meta name="description" content="Learn about Premier Steels, our mission, values, and the team behind our success." />
       </Helmet>
       <AboutHero /> {/* this has the video */}
-      <AboutCards/>
-     {/* <MiniAbout /> optional  */} 
+      <AboutCards />
+      {/* <MiniAbout /> optional  */}
       <AboutFounderSection />
-      <StatisticsSection/>
+      <StatisticsSection />
     </div>
   );
 }

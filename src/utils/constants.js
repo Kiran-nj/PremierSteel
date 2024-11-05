@@ -15,7 +15,6 @@ import squareAndRound from '../assets/squareandround.jpg';
 import square from '../assets/mssquare.jpg';
 import Gisheet from '../assets/gisheet.jpg';
 import sheet2 from '../assets/sheet2.jpg';
-import founderImg from '../assets/founder.jpeg';
 import backgroundImg from '../assets/images/footer_bg.jpeg';
 import Logo from '../assets/images/company_logo_bg.png'; // Update the path to your image
 import completedYears from '../assets/images/forty.png'; // Update the path to your image
@@ -73,14 +72,13 @@ export const productsList = [
         "Premier Steels is committed to customer satisfaction, providing reliable service and timely delivery to meet the demands of diverse industries.",
         " Over the years, the company has built a reputation for excellence driven by a dedication to innovation and continuous improvement.",
       ],
-      image: founderImg // Image path for founder
     },
-    {
-      role: "CEO",
-      name: "Mr. Zakir",
-      description: [],
-      image: founderImg // Image path for co-founder
-    }
+    // {
+    //   role: "CEO",
+    //   name: "Mr. Zakir",
+    //   description: [],
+    //   image: founderImg // Image path for co-founder
+    // }
   ];
 
   export const blogPosts = [

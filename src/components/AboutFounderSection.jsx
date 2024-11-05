@@ -58,14 +58,6 @@ const AboutFounderSection = () => {
                 </p>
               ))}
             </div>
-
-          {/*}  <div className="animate-image w-full md:w-1/2 h-[60vh] opacity-0 scale-90">
-              <img
-                src={member.image} // Dynamically render the image from teamMembers array
-                alt={member.name}
-                className="w-full h-full rounded-lg object-cover shadow-lg transition-transform duration-300 hover:scale-105"
-              />
-            </div>*/}
           </div>
         ))}
       </div>
