@@ -125,15 +125,18 @@ function Footer({ setIsEnquiryModalOpen }) {
               <a href={`https://wa.me/+91${companyPhoneNo}`} target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
                 <FaWhatsapp size="1.5rem" className="cursor-pointer" />
               </a>
-              <a href="https://www.facebook.com/people/Luxe-Moto/61556341210047/" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
+              <a href="https://www.facebook.com/people/Premier-Steels/100070995211277/" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
                 <AiOutlineFacebook size="1.5rem" className="cursor-pointer" />
               </a>
-              <a href="https://www.youtube.com/channel/UCG2c97djf6d2yq8ONRlYXGQ/videos" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
+              <a href={`tel:+91${companyPhoneNo}`} target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
+                <MdOutlineCall size="1.5rem" className="cursor-pointer" />
+              </a>
+              {/* <a href="https://www.youtube.com/channel/UCG2c97djf6d2yq8ONRlYXGQ/videos" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
                 <FiYoutube size="1.5rem" className="cursor-pointer" />
               </a>
               <a href="https://www.instagram.com/luxe_moto_/" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
                 <FaInstagram size="1.5rem" className="cursor-pointer" />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -142,15 +145,18 @@ function Footer({ setIsEnquiryModalOpen }) {
           <a href={`https://wa.me/+91${companyPhoneNo}`} target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
             <FaWhatsapp size="1.5rem" className="cursor-pointer" />
           </a>
-          <a href="https://www.facebook.com/people/Luxe-Moto/61556341210047/" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
+          <a href={`tel:+91${companyPhoneNo}`} target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
+            <MdOutlineCall size="1.5rem" className="cursor-pointer" />
+          </a>
+          <a href="https://www.facebook.com/people/Premier-Steels/100070995211277/" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
             <AiOutlineFacebook size="1.5rem" className="cursor-pointer" />
           </a>
-          <a href="https://www.youtube.com/channel/UCG2c97djf6d2yq8ONRlYXGQ/videos" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
+          {/* <a href="https://www.youtube.com/channel/UCG2c97djf6d2yq8ONRlYXGQ/videos" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
             <FiYoutube size="1.5rem" className="cursor-pointer" />
           </a>
           <a href="https://www.instagram.com/luxe_moto_/" target="_blank" rel="noreferrer" className=" hover:text-white transition-colors">
             <FaInstagram size="1.5rem" className="cursor-pointer" />
-          </a>
+          </a> */}
         </div>
 
 

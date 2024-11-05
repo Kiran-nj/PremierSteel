@@ -27,14 +27,14 @@ const StatisticsSection = () => {
   }, []);
 
   const statsData = [
-    { icon: <FaBuilding size={30} />, label: 'COMPANY FOUNDED', value: '2022' },
+    { icon: <FaBuilding size={30} />, label: 'COMPANY FOUNDED', value: '1982' },
     { icon: <FaUsers size={30} />, label: 'EMPLOYEES', value: '10+' },
     { icon: <FaSmile size={30} />, label: 'HAPPY CUSTOMERS', value: '1K+' },
     { icon: <FaThumbsUp size={30} />, label: 'SATISFACTION RATE', value: '99.99%' },
   ];
 
   return (
-    <div className="bg-selRed text-white py-10">
+    <div className="bg-black text-white py-10">
       <div className="max-w-5xl mx-auto flex justify-between">
         {statsData.map((stat, index) => (
           <div
