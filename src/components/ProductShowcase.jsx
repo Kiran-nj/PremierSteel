@@ -92,7 +92,7 @@ const ProductShowcase = () => {
     },
     { 
       id: 9, 
-      name: 'GP/MS Tubes & Pipes', 
+      name: 'GP/MS Tubes,Pipes,Squares,Rounds', 
       icon: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M4 6h16v12H4z" />

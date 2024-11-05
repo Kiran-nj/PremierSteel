@@ -26,6 +26,20 @@ function Home() {
       <SteelProductsShowcase />
       <MiniAbout />
       <StrategicPartners />
+            {/* Hidden keywords section */}
+       <div className="hidden lg:block absolute -z-10 top-0 opacity-0 pointer-events-none">
+        <p>
+          Steel, TMT, Steel distributor, Steel wholesale, Channels, Beam, Joists, Angle, Plates, Sail,
+          Steel Suppliers, Steel Dealers, Steel Wholesalers, Steel Sheets, Stainless Steel Pipes, Mild
+          Steel, Structural Steel, Steel Tubes, Industrial Steel Products, Steel Fabrication, Steel
+          Sections, Metal Suppliers, Steel Construction Materials, Galvanized Steel, Reinforcement
+          Steel, Heavy Steel Beams, Steel Bars, Steel Manufacturing, Vizag Steel Suppliers, Kerala
+          Steel Suppliers, SAIL Steel Dealers, Steel Products for Construction, Durable Steel Materials,
+          Stainless Steel Plates, Bulk Steel Supply, Custom Steel Solutions, Quality Steel Products,
+          Affordable Steel Wholesaler, Trusted Steel Suppliers, Steel Distributor Near Me, Premium
+          Quality Steel, India
+        </p>
+      </div>
     </div>
   );
 }

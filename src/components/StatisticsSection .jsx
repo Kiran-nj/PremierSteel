@@ -29,7 +29,7 @@ const StatisticsSection = () => {
   const statsData = [
     { icon: <FaBuilding size={30} />, label: 'COMPANY FOUNDED', value: '1982' },
     { icon: <FaUsers size={30} />, label: 'EMPLOYEES', value: '10+' },
-    { icon: <FaSmile size={30} />, label: 'HAPPY CUSTOMERS', value: '1K+' },
+    { icon: <FaSmile size={30} />, label: 'HAPPY CUSTOMERS', value: '10K+' },
     { icon: <FaThumbsUp size={30} />, label: 'SATISFACTION RATE', value: '99.99%' },
   ];
 

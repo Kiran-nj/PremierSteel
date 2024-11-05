@@ -42,14 +42,14 @@ export const partners = [
 export const productsList = [
     { title: 'MS Joists', category: 'Energy / Tools', imageSrc: steelAngles },
     { title: 'MS Channels', category: 'Energy / Tools', imageSrc: channel },
-    { title: 'MS Plates', category: 'Energy / Tools', imageSrc: sheet },
+    { title: 'MS Plates & MS Sheets', category: 'Energy / Tools', imageSrc: sheet },
     { title: 'MS Angles', category: 'Energy / Tools', imageSrc: angles },
-    { title: 'MS Flats', category: 'Energy / Tools', imageSrc: flats },
+    { title: 'MS Flats ', category: 'Energy / Tools', imageSrc: flats },
     { title: 'MS Rounds', category: 'Energy / Tools', imageSrc: rounds },
     { title: 'MS Squares', category: 'Energy / Tools', imageSrc: square },
     { title: 'MS Chequered Plates', category: 'Energy / Tools', imageSrc: sheet2 },
-    { title: 'GP/MS Tubes & Pipes', category: 'Energy / Tools', imageSrc: squareAndRound },
-    { title: 'GI Sheets', category: 'Energy / Tools', imageSrc: Gisheet },
+    { title: 'GP/MS Tubes,Pipes,Squares,Rounds', category: 'Energy / Tools', imageSrc: squareAndRound },
+    { title: 'MS Plate & Coil', category: 'Energy / Tools', imageSrc: Gisheet },
 
 
 
@@ -70,8 +70,8 @@ export const productsList = [
         "Premier steels is established in 1982 by V A Mohamed Ashraf (Achu).",
         "Premier Steels started as a small business to become one of the most respected names in the Stainless Steel market.",
         "With a huge stock ranging from S.S Pipes, Sheets, Angles, and various other products all available at competitive prices, we also assure an exceptional quality of our products.",
-        "We are also the authorised dealers of JNB Steels and as said above, quality is our first priority.",
-        "Another product worth mentioning is the Coloured, PVD Coated Stainless Steel Sheet, which is in popular demand for its visual appeal and various other advantages.",
+        "Premier Steels is committed to customer satisfaction, providing reliable service and timely delivery to meet the demands of diverse industries.",
+        " Over the years, the company has built a reputation for excellence driven by a dedication to innovation and continuous improvement.",
       ],
       image: founderImg // Image path for founder
     },

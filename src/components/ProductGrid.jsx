@@ -6,7 +6,8 @@ const ProjectGrid = () => {
   return (
     <>
       <div className='h-fit text-selWhite text-xl md:text-5xl pl-2 md:pl-10 py-5 md:py-10 uppercase font-extralight md:font-thin text-start md:text-center bg-black'>
-        <h2 className="">All <span className='text-selRed'>Stocks</span></h2>
+        <h2 className=""> <span className='text-selRed'>Stocks</span></h2>
+        <h3><span className='text-selRed'>Available</span> in   All <span className='text-selRed'>Sizes</span> and <span className='text-selRed'>Quantity</span></h3>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-1 md:px-4 pb-3 md:pb-10 bg-black">
         {productsList.map((project, index) => (
