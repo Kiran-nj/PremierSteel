@@ -45,7 +45,7 @@ const AboutCards = () => {
     }, []);
 
     return (
-        <div className="flex flex-col items-center py-10 px-4 md:px-0 bg-gray-100">
+        <div className="flex flex-col items-center py-10 px-4 md:px-0 bg-red-950">
          {/*  <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-white">About Us</h2>*/}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-full max-w-7xl">
                 {cardData.map((card, index) => (
