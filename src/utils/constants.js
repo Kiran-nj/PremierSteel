@@ -64,7 +64,7 @@ export const productsList = [
   export const teamMembers = [
     {
       role: "Founder",
-      name: "Mr. V A Mohamed Ashraf",
+      name: "V A Mohamed Ashraf",
       description: [
         "Premier steels is established in 1982 by V A Mohamed Ashraf (Achu).",
         "Premier Steels started as a small business to become one of the most respected names in the Stainless Steel market.",

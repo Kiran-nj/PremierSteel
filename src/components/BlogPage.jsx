@@ -6,9 +6,9 @@ const Blogs = () => {
 
 
   return (
-    <div className=" text-white py-8 px-4 sm:px-6 lg:px-8">
+    <div className=" text-selRed py-8 px-4 sm:px-6 lg:px-8 bg-selWhite">
       <div className="max-w-7xl mx-auto">
-        <p className="text-center  mb-12">
+        <p className="text-center  mb-5 md:mb-10 uppercase  text-lg md:text-xl">
           Discover comprehensive information on steel production, grades, and applications in various industries.
         </p>
 
@@ -18,7 +18,7 @@ const Blogs = () => {
               key={post.id}
               className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300"
             >
-              <h2 className="text-2xl font-semibold  mb-2">{post.title}</h2>
+              <h2 className="text-2xl font-semibold  mb-2 text-selRed">{post.title}</h2>
               <p className=" mb-4">{post.summary}</p>
               
             </div>
