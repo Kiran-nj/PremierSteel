@@ -1,0 +1,15 @@
+# Allow all search engines
+User-agent: *
+Disallow: 
+
+# Block specific directories or files if necessary
+# For example, if you have a staging area or admin area:
+Disallow: /admin/
+Disallow: /staging/
+
+# Allow specific files or directories under a blocked path
+Allow: /products/
+Allow: /about-us/
+
+# Specify the location of your sitemap
+Sitemap: http://www.yoursteelwebsite.com/sitemap.xml

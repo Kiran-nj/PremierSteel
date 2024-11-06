@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
-import SteelProductsShowcase from '../components/Products';
-import Hero from '../components/Hero';
-import MiniAbout from './../components/MiniAbout';
-import StrategicPartners from '../components/Partners';
+import ProductHero from '../components/ProductHero';
+import ProductGrid from './../components/ProductGrid';
 import { Helmet } from 'react-helmet-async';
 
-function Home() {
+const Products = () => {
   useEffect(() => {
     // Scroll to top when the component mounts
     window.scrollTo(0, 0);
@@ -16,23 +14,18 @@ function Home() {
     };
   }, []);
   return (
-    <div className=''>
+    <div className='overflow-hidden'>
       <Helmet>
-        <title>Premier Steels</title>
-        <meta name="description" content="Explore Premier Steels' quality products, strategic partnerships, and commitment to excellence in steel manufacturing." />
-        <meta name="keywords" content="steel products, MS Joints, MS Channels, Premier Steels, steel manufacturing" />
+        <title>Our Products | Premier Steels</title>
+        <meta name="description" content="Explore our wide range of steel products including MS Joints, Plates, Channels, and more." />
+        <meta name="keywords" content="steel products, MS Joints, MS Plates, steel supplier, Premier Steels" />
       </Helmet>
-      <Hero />
-      <SteelProductsShowcase />
-      <MiniAbout />
-      <StrategicPartners />
+
+      <ProductHero />
+      <ProductGrid />
 
 
-
-      {/* Hidden keywords section  for SEO*/}
-
-
-
+      {/*SEO SEgment hidden  keywords*/}
       <div className="hidden lg:block absolute -z-10 top-0 opacity-0 pointer-events-none">
         <p>
           Steel, TMT, Steel distributor, Steel wholesale, Channels, Beam, Joists, Angle, Plates, Sail,
@@ -89,9 +82,8 @@ function Home() {
         <h2 className="hidden">Premium Quality Steel</h2>
         <h2 className="hidden">Indian Steel Supplier</h2>
       </div>
-
     </div>
   );
 }
 
-export default Home;
+export default Products;

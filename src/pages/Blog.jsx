@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
-import SteelProductsShowcase from '../components/Products';
-import Hero from '../components/Hero';
-import MiniAbout from './../components/MiniAbout';
-import StrategicPartners from '../components/Partners';
+import React, { useEffect } from 'react'
+import Blogs from './../components/BlogPage';
+import BlogHero from '../components/BlogHero';
 import { Helmet } from 'react-helmet-async';
 
-function Home() {
+const Blog = () => {
   useEffect(() => {
     // Scroll to top when the component mounts
     window.scrollTo(0, 0);
@@ -18,21 +16,19 @@ function Home() {
   return (
     <div className=''>
       <Helmet>
-        <title>Premier Steels</title>
-        <meta name="description" content="Explore Premier Steels' quality products, strategic partnerships, and commitment to excellence in steel manufacturing." />
-        <meta name="keywords" content="steel products, MS Joints, MS Channels, Premier Steels, steel manufacturing" />
+        <title>Blog | Premier Steels</title>
+        <meta
+          name="description"
+          content="Learn more about steel properties, production methods, grades, and applications in our Factfile Blog."
+        />
+        <meta
+          name="keywords"
+          content="steel production, steel distribution, mild steel, stainless steel, steel properties, steel grades"
+        />
       </Helmet>
-      <Hero />
-      <SteelProductsShowcase />
-      <MiniAbout />
-      <StrategicPartners />
-
-
-
-      {/* Hidden keywords section  for SEO*/}
-
-
-
+      <BlogHero /> {/* this has the video */}
+      <Blogs />
+      {/*SEO segment keywords*/}
       <div className="hidden lg:block absolute -z-10 top-0 opacity-0 pointer-events-none">
         <p>
           Steel, TMT, Steel distributor, Steel wholesale, Channels, Beam, Joists, Angle, Plates, Sail,
@@ -89,9 +85,8 @@ function Home() {
         <h2 className="hidden">Premium Quality Steel</h2>
         <h2 className="hidden">Indian Steel Supplier</h2>
       </div>
-
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Blog
