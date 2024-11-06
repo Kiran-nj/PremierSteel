@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { companyEmail, companyPhoneNo } from '../utils/constants';
 
 import { MdEmail, MdLocationOn } from 'react-icons/md';
@@ -6,8 +6,64 @@ import { IoCall } from 'react-icons/io5';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { ImFacebook2 } from 'react-icons/im';
 import { IoLogoYoutube } from 'react-icons/io';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import { POST_ENQUIRY_FORM } from '../utils/urls';
 
 const ContactsContentSection = () => {
+    const [formValues, setFormValues] = useState({
+        name: '',
+        email: '',
+        phone_number: '',
+        message: ''
+    });
+    const [errors, setErrors] = useState({});
+
+    const validateForm = () => {
+        const newErrors = {};
+        if (!formValues.name) newErrors.name = 'Name is required';
+        if (!formValues.phone_number || !/^\d{10,12}$/.test(formValues.phone_number)) {
+            newErrors.phone_number = 'A valid phone number with 10 to 12 digits is required';
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormValues({
+            ...formValues,
+            [name]: value,
+        });
+        if (errors[name]) {
+            const newErrors = { ...errors };
+            delete newErrors[name];
+            setErrors(newErrors);
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (validateForm()) {
+            try {
+                await toast.promise(
+                    axios.post(POST_ENQUIRY_FORM, formValues),
+                    {
+                        pending: 'Submitting...',
+                        success: 'Form submitted successfully!',
+                        error: 'Error submitting form',
+                    }
+                );
+                setFormValues({ name: '', email: '', phone_number: '', message: '' }); // Reset form fields
+            } catch (error) {
+                console.error("Form submission error:", error);
+            }
+        } else {
+            toast.error("Please fill out all required fields.");
+        }
+    };
+
     return (
         <>
 
@@ -58,48 +114,60 @@ const ContactsContentSection = () => {
 
             <div className="bg-selWhite text-black py-8 md:py-10">
                 <div className="flex flex-col justify-center items-center px-4 text-center gap-2 md:gap-3">
-                    <div className="flex flex-col justify-center items-center">
-                        <h2 className="font-bold text-xl md:text-3xl uppercase text-selRed">Send us an email</h2>
-                    </div>
+                    <h2 className="font-bold text-xl md:text-3xl uppercase text-selRed">Send us an email</h2>
+                    <p className="text-xs md:text-base">We're here to answer any questions and provide support.</p>
+                    <p className="text-xs md:text-base">Feel free to leave us a message, and we'll get back to you promptly.</p>
 
-                    <div className="text-xs md:text-base">
-                        <p>We're here to answer any questions and provide support.</p>
-                        <p>Feel free to leave us a message, and we'll get back to you promptly.</p>
-                    </div>
-
-                    <form className="flex flex-col space-y-4 w-full max-w-7xl mt-3 md:mt-5">
-                        {/* Name Field */}
-                        <input
-                            type="text"
-                            placeholder="Your Name"
-                            className="p-3 text-black focus:outline-none w-full rounded-md placeholder:text-xs md:placeholder:text-base"
-                        />
-
-                        {/* Email Field */}
-                        <input
-                            type="email"
-                            placeholder="Your Email"
-                            className="p-3 text-black focus:outline-none w-full rounded-md placeholder:text-xs md:placeholder:text-base"
-                        />
-
-                        {/* Phone Number Field */}
-                        <input
-                            type="tel"
-                            placeholder="Your Phone Number"
-                            className="p-3 text-black focus:outline-none w-full rounded-md placeholder:text-xs md:placeholder:text-base"
-                        />
-
-                        {/* Message Field */}
-                        <textarea
-                            placeholder="Your Message"
-                            className="p-3 text-black focus:outline-none w-full rounded-md placeholder:text-xs md:placeholder:text-base"
-                            rows="4"
-                        />
-
-                        {/* Submit Button */}
+                    <form className="flex flex-col space-y-4 w-full max-w-7xl mt-3 md:mt-5" onSubmit={handleSubmit}>
                         <div>
-                            <button className='bg-selRed px-16 py-2 text-white rounded-md'>Submit</button>
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Your Name"
+                                value={formValues.name}
+                                onChange={handleInputChange}
+                                className="p-3 text-black focus:outline-none w-full rounded-md placeholder:text-xs md:placeholder:text-base"
+                            />
+                            {errors.name && <p className="text-red-500 text-start text-xs md:text-sm">{errors.name}</p>}
                         </div>
+
+                        <div>
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Your Email"
+                                value={formValues.email}
+                                onChange={handleInputChange}
+                                className="p-3 text-black focus:outline-none w-full rounded-md placeholder:text-xs md:placeholder:text-base"
+                            />
+                            {errors.email && <p className="text-red-500 text-start text-xs md:text-sm">{errors.email}</p>}
+                        </div>
+
+                        <div>
+                            <input
+                                type="tel"
+                                name="phone_number"
+                                placeholder="Your Phone Number"
+                                value={formValues.phone_number}
+                                onChange={handleInputChange}
+                                className="p-3 text-black focus:outline-none w-full rounded-md placeholder:text-xs md:placeholder:text-base"
+                            />
+                            {errors.phone_number && <p className="text-red-500 text-start text-xs md:text-sm">{errors.phone_number}</p>}
+                        </div>
+
+                        <div>
+                            <textarea
+                                name="message"
+                                placeholder="Your Message"
+                                value={formValues.message}
+                                onChange={handleInputChange}
+                                className="p-3 text-black focus:outline-none w-full rounded-md placeholder:text-xs md:placeholder:text-base"
+                                rows="4"
+                            />
+                            {errors.message && <p className="text-red-500 text-start text-xs md:text-sm">{errors.message}</p>}
+                        </div>
+
+                        <button className="bg-selRed px-16 py-2 text-white rounded-md">Submit</button>
                     </form>
                 </div>
             </div>

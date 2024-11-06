@@ -10,18 +10,19 @@ const Loader = () => {
 }
 
 const StyledWrapper = styled.div`
-  /* Full-screen white background */
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;    /* background color */
+  background-color: black;
 
   .spinner {
-    --size: 60px;
-    --first-block-clr: #9C2327;    /* block colorchanging */
-    --second-block-clr: #F2F1EF;     /* block colorchanging*/
+    --size: 60px; /* Default size */
+    // --first-block-clr: #9C2327;
+    // --second-block-clr: #F2F1EF;
+    --first-block-clr: rgb(69 10 10);
+    --second-block-clr: rgb(69 10 10);
     --clr: #111;
     width: 100px;
     height: 100px;
@@ -76,6 +77,23 @@ const StyledWrapper = styled.div`
     }
     75% {
       transform: translateY(-100%);
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .spinner {
+      --size: 40px;
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .spinner {
+      --size: 30px;
+      width: 60px;
+      height: 60px;
     }
   }
 `;
