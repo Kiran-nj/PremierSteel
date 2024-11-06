@@ -25,7 +25,7 @@ const Products = () => {
       <ProductGrid />
 
 
-      {/*SEO SEgment   keywords*/}
+      {/*SEO SEgment hidden  keywords*/}
       <div className="hidden lg:block absolute -z-10 top-0 opacity-0 pointer-events-none">
         <p>
           Steel, TMT, Steel distributor, Steel wholesale, Channels, Beam, Joists, Angle, Plates, Sail,
