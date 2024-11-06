@@ -5,19 +5,12 @@ import Loader from './Loader';
 
 const SteelProductsShowcase = () => {
   const sectionRefs = useRef([]);
-  const videoRef = useRef(null);
   const [loadingStates, setLoadingStates] = useState(
     Array(featuredProjects.length).fill(true)
   );
 
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
-
-    if (!isMobile && videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.error("Video autoplay failed:", error);
-      });
-    }
 
     sectionRefs.current.forEach((section, index) => {
       const productImage = section.querySelector('.product-image');
@@ -44,14 +37,13 @@ const SteelProductsShowcase = () => {
   }, []);
 
   const handleImageLoad = (index) => {
-    // Brief delay to make sure loader is visible
     setTimeout(() => {
       setLoadingStates((prevStates) => {
         const newStates = [...prevStates];
         newStates[index] = false;
         return newStates;
       });
-    }, 1000); // Delay for 1 second
+    }, 1000);
   };
 
   const isMobile = window.innerWidth < 768;
@@ -62,14 +54,23 @@ const SteelProductsShowcase = () => {
         <h2>featured <span className='text-selRed'>Products</span></h2>
       </div>
       <div className="relative w-full flex-grow overflow-hidden">
-        <video
-          ref={videoRef}
+        <iframe
           className="absolute inset-0 w-full h-full object-cover hidden md:block"
-          src="src/assets/vidcomp1.mp4"
-          loop
-          muted
-          playsInline
-        />
+          src="https://www.youtube.com/embed/RGkXZ4E7y1E?autoplay=1&mute=1&loop=1&playlist=RGkXZ4E7y1E"
+          title="YouTube video"
+          frameBorder="0"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowFullScreen
+          style={{
+            width: '100vw',
+            height: '56.25vw', // Aspect ratio of 16:9
+            minHeight: '100vh',
+            minWidth: '50vw', // Aspect ratio of 16:9 for height
+            objectFit: 'cover',
+            transform: 'scale(1.5)', // Scale the video to remove top/bottom bars
+            transformOrigin: 'center center', // Keep scaling centered
+          }}
+        ></iframe>
 
         <div className="relative w-full h-full flex flex-col md:flex-row bg-selBlack/60">
           {featuredProjects.map((product, index) => (
