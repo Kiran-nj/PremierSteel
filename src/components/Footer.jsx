@@ -25,8 +25,11 @@ function Footer({ setIsEnquiryModalOpen }) {
         </div>
       </div>
 
-      {/* Footer Section for Larger Screens */}
-      <div className="hidden md:block bg-black md:px-20 py-5 md:py-14">
+      {/* Larger screens */}
+      <div className='hidden md:block bg-black md:px-20 py-5 md:py-14'>
+        {/* Footer Section */}
+        {/* <div className="py-8 flex flex-col lg:flex-row justify-between items-center border-b-2 border-gray-700"> */}
+        {/* Left Section: Logo, Company Name, and Tagline */}
         <div className="flex flex-col md:items-center md:mb-4 lg:mb-0 lg:mr-8 text-[#a9a9a9]">
           <NavLink to="/" className="flex items-center">
             <img src={companyLogo} alt="Company Logo" className="w-5 h-5 lg:w-10 lg:h-6" />
@@ -84,12 +87,86 @@ function Footer({ setIsEnquiryModalOpen }) {
         </div>
       </div>
 
-      {/* Footer Section for Small Screens */}
+
+      {/* smaller screens */}
       <div className="block md:hidden bg-black text-[#a9a9a9] py-5">
         <div className="text-center text-white mb-4">
-          <h1 className="text-xl font-semibold">Premier Steels</h1>
-          <p className="text-xs">Quality • Strength • Durability</p>
+          <div className='flex justify-center items-center'>
+            <div className="bg-selRed-400 rounded-full px-2 flex items-center">
+              <img src={companyLogo} alt="Company Logo" className="w-8 h-5 lg:w-10 lg:h-6 transition-all duration-700 ease-in-out" />
+            </div>
+            <h1 className="text-xl font-semibold">Premier Steels</h1>
+          </div>
+          <p className="text-[.6rem]">Quality • Strength • Durability</p>
         </div>
+
+        <div className="text-center space-y-2 text-xs text-[#a9a9a9]">
+          <div>
+            <h4 className="font-bold">LOCATION</h4>
+            <p>STOCK YARD, PULLEPADY ROAD</p>
+            <p>ERNAKULAM, PIN: 628017</p>
+          </div>
+
+          <div className="flex text-center justify-center items-center gap-20">
+
+            <div>
+              <h4 className="font-bold text-sm mb-2">PRODUCTS</h4>
+              <ul className="space-y-1">
+                {productsList.slice(0, 5).map((prod, index) => (
+                  <li key={index} className="uppercase">{prod.title}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-bold text-sm mb-2">INFORMATION</h4>
+              <ul className="space-y-1 text-xs">
+                <li>HOME</li>
+                <li>PRODUCTS</li>
+                <li>BLOG</li>
+                <li>ABOUT</li>
+                <li>CONTACT</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className=''>
+            <h4 className="font-bold mt-3">CONTACT</h4>
+            <span onClick={() => window.location.href = `mailto:${companyEmail}`} className="cursor-pointer block">Email: {companyEmail}</span>
+            <span onClick={() => window.location.href = `tel:+91${companyPhoneNo}`} className="cursor-pointer block">Phone: +91 {companyPhoneNo}</span>
+          </div>
+        </div>
+
+        <div className="flex justify-center gap-4 pt-4 text-white">
+          <a href={`https://wa.me/+91${companyPhoneNo}`} target="_blank" rel="noreferrer">
+            <FaWhatsapp size="1.5rem" />
+          </a>
+          <a href="https://www.facebook.com/people/Premier-Steels/100070995211277/" target="_blank" rel="noreferrer">
+            <AiOutlineFacebook size="1.5rem" />
+          </a>
+          <a href="https://www.instagram.com/premiersteelsindia/" target="_blank" rel="noreferrer">
+            <FaInstagram size="1.5rem" />
+          </a>
+          <a href={`tel:+91${companyPhoneNo}`} target="_blank" rel="noreferrer" className=" ">
+            <MdOutlineCall size="1.5rem" className="cursor-pointer" />
+          </a>
+        </div>
+      </div>
+
+      {/* powered by section */}
+      <footer className="text-lineGray py-1 md:py-2 bg-black">
+        <div className="container mx-auto md:px-5">
+          <div className="flex flex-col md:flex-row items-center md:justify-center">
+            <div className="flex flex-col text-right md:text-center w-full items-end md:items-center text-[.5rem] md:text-[.6rem]">
+
+              {/* Copyright Text */}
+              <div className="flex items-center justify-end md:justify-center space-x-2">
+                <p className="font-medium">
+                  ©2024&nbsp;
+                  <span className="uppercase">Premier Steels |</span>
+                  &nbsp;All Rights Reserved.
+                </p>
+              </div>
 
         <div className="text-center space-y-2 text-xs">
           <h4 className="font-bold">LOCATION</h4>

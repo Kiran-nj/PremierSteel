@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { featuredProjects } from '../utils/constants';
+import { companyPhoneNo, featuredProjects } from '../utils/constants';
 import Loader from './Loader';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const SteelProductsShowcase = () => {
   const sectionRefs = useRef([]);
@@ -98,6 +99,14 @@ const SteelProductsShowcase = () => {
                   {product.name}
                 </span>
               </div>
+              <a
+              href={`https://wa.me/+91${companyPhoneNo}?text=I'm%20interested%20in%20the%20product:%20${encodeURIComponent(product.name)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-2 md:bottom-3 right-4 z-10 text-green md:opacity-80 hover:opacity-100 transition-opacity duration-300 animate-pulse"
+            >
+              <FaWhatsapp className='text-3xl md:text-4xl' />
+            </a>
             </div>
           ))}
         </div>
